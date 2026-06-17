@@ -2,1593 +2,1625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Arina Turgeneva, Junior QA Engineer portfolio resume: manual testing, Playwright, TypeScript, Python, API testing, SQL, WordPress CMS, test documentation." />
-  <title>Arina Turgeneva | QA Engineer Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      color-scheme: light;
-      --bg-main: #f8fafc;
-      --bg-side: rgba(255, 255, 255, 0.48);
-      --text-main: #241f1c;
-      --text-muted: #675f59;
-      --border-color: rgba(184, 121, 94, 0.08);
-      --card-bg: rgba(255, 255, 255, 0.34);
-      --card-hover: rgba(255, 255, 255, 0.52);
-      --accent: #d946ef;
-      --accent-soft: rgba(217, 70, 239, 0.1);
-      --accent-blue: rgba(14, 165, 233, 0.12);
-      --accent-mint: rgba(168, 85, 247, 0.08);
-      --shadow: 0 18px 60px rgba(42, 31, 24, 0.055);
-      --modal-overlay: rgba(247, 243, 238, 0.14);
-      --font-display: "Cormorant Garamond", Georgia, serif;
-      --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --transition: 180ms ease;
-    }
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="description" content="Arina Turgeneva, Junior QA Engineer portfolio resume: manual testing, Playwright, TypeScript, Python, API testing, SQL, WordPress CMS, test documentation." />
+ <title>Arina Turgeneva | QA Engineer Portfolio</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+ <style>
+   :root {
+     color-scheme: light;
+     --bg-main: #f8fafc;
+     --bg-side: rgba(255, 255, 255, 0.48);
+     --text-main: #241f1c;
+     --text-muted: #675f59;
+     --border-color: rgba(184, 121, 94, 0.08);
+     --card-bg: rgba(255, 255, 255, 0.34);
+     --card-hover: rgba(255, 255, 255, 0.52);
+     --accent: #d946ef;
+     --accent-soft: rgba(217, 70, 239, 0.1);
+     --accent-blue: rgba(14, 165, 233, 0.12);
+     --accent-mint: rgba(168, 85, 247, 0.08);
+     --shadow: 0 18px 60px rgba(42, 31, 24, 0.055);
+     --modal-overlay: rgba(247, 243, 238, 0.14);
+     --font-display: "Cormorant Garamond", Georgia, serif;
+     --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+     --transition: 180ms ease;
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        color-scheme: dark;
-        --bg-main: #0d0e15;
-        --bg-side: rgba(22, 21, 25, 0.62);
-        --text-main: #f6f0e9;
-        --text-muted: #e5ddd6;
-        --border-color: rgba(246, 240, 233, 0.08);
-        --card-bg: rgba(28, 27, 32, 0.46);
-        --card-hover: rgba(38, 36, 43, 0.6);
-        --accent: #f43f5e;
-        --accent-soft: rgba(244, 63, 94, 0.16);
-        --accent-blue: rgba(14, 165, 233, 0.15);
-        --accent-mint: rgba(139, 92, 246, 0.16);
-        --shadow: 0 22px 65px rgba(0, 0, 0, 0.22);
-        --modal-overlay: rgba(8, 8, 10, 0.18);
-      }
-    }
+     /* Тонирование графики под нежно-розовый для светлой темы */
+     --art-blend: multiply;
+     --art-opacity: 0.12;
+     --art-color-filter: drop-shadow(0 0 0 #f472b6);
+   }
+   @media (prefers-color-scheme: dark) {
+     :root {
+       color-scheme: dark;
+       --bg-main: #0d0e15;
+       --bg-side: rgba(22, 21, 25, 0.62);
+       --text-main: #f6f0e9;
+       --text-muted: #e5ddd6;
+       --border-color: rgba(246, 240, 233, 0.08);
+       --card-bg: rgba(28, 27, 32, 0.46);
+       --card-hover: rgba(38, 36, 43, 0.6);
+       --accent: #f43f5e;
+       --accent-soft: rgba(244, 63, 94, 0.16);
+       --accent-blue: rgba(14, 165, 233, 0.15);
+       --accent-mint: rgba(139, 92, 246, 0.16);
+       --shadow: 0 22px 65px rgba(0, 0, 0, 0.22);
+       --modal-overlay: rgba(8, 8, 10, 0.18);
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+       /* Нежно-розовое свечение графики для темной темы */
+       --art-blend: screen;
+       --art-opacity: 0.08;
+     }
+   }
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   html,
+   body {
+     width: 100%;
+     height: 100%;
+     background:
+       radial-gradient(circle at 20% 30%, var(--accent-blue), transparent 35%),
+       radial-gradient(circle at 75% 65%, var(--accent-mint), transparent 35%),
+       radial-gradient(circle at 85% 15%, var(--accent-soft), transparent 30%),
+       var(--bg-main);
+     color: var(--text-main);
+     font-family: var(--font-body);
+     line-height: 1.35;
+     overflow: hidden;
+     -webkit-font-smoothing: antialiased;
+     text-rendering: optimizeLegibility;
+   }
+   body::before,
+   body::after {
+     content: "";
+     position: fixed;
+     z-index: 0;
+     border-radius: 999px;
+     filter: blur(90px);
+     pointer-events: none;
+     animation: floatGlow 14s ease-in-out infinite alternate;
+   }
+   body::before {
+     width: 48vw;
+     height: 48vw;
+     right: 18vw;
+     top: -18vw;
+     background: rgba(139, 92, 246, 0.12);
+   }
+   body::after {
+     width: 52vw;
+     height: 52vw;
+     left: 38vw;
+     bottom: -24vw;
+     background: rgba(244, 63, 94, 0.1);
+     animation-delay: -6s;
+   }
+   @keyframes floatGlow {
+     from { transform: translate3d(0, 0, 0) scale(1); }
+     to { transform: translate3d(26px, 18px, 0) scale(1.08); }
+   }
+   a {
+     color: inherit;
+     text-decoration-thickness: 1px;
+     text-underline-offset: 3px;
+   }
+   a:hover {
+     color: var(--accent);
+   }
+   :focus-visible {
+     outline: 3px solid color-mix(in srgb, var(--accent) 72%, white);
+     outline-offset: 3px;
+     border-radius: 10px;
+   }
+   .glow-wrapper {
+     position: fixed;
+     inset: 0;
+     z-index: 1;
+     overflow: hidden;
+     pointer-events: none;
+   }
+   .glow-blob {
+     position: absolute;
+     border-radius: 999px;
+     filter: blur(70px);
+     opacity: 0.72;
+     animation: floatGlow 12s ease-in-out infinite alternate;
+   }
+   .glow-blob-1 {
+     width: 340px;
+     height: 340px;
+     left: -110px;
+     top: 12vh;
+     background: rgba(14, 165, 233, 0.14);
+   }
+   .glow-blob-2 {
+     width: 420px;
+     height: 420px;
+     right: -120px;
+     bottom: 5vh;
+     background: rgba(244, 63, 94, 0.12);
+     animation-delay: -4s;
+   }
+   .portfolio-dashboard,
+   .about-dashboard {
+     position: relative;
+     z-index: 2;
+     grid-template-columns: 326px minmax(0, 1fr);
+     gap: 18px;
+     width: 100%;
+     height: 100svh;
+     padding: 18px;
+     overflow: hidden;
+   }
+   .portfolio-dashboard {
+     display: grid;
+   }
+   .about-dashboard {
+     display: none;
+   }
+   body[data-view="about"] .portfolio-dashboard {
+     display: none;
+   }
+   body[data-view="about"] .about-dashboard {
+     display: grid;
+   }
+   .sidebar,
+.summary-card,
+.clickable-tab,
+.final-edu,
+.final-lang{
+    border-radius:22px;
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(circle at 20% 30%, var(--accent-blue), transparent 35%),
-        radial-gradient(circle at 75% 65%, var(--accent-mint), transparent 35%),
-        radial-gradient(circle at 85% 15%, var(--accent-soft), transparent 30%),
-        var(--bg-main);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      line-height: 1.35;
-      overflow: hidden;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+    border:1px solid color-mix(
+        in srgb,
+        var(--border-color) 38%,
+        transparent
+    );
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      z-index: 0;
-      border-radius: 999px;
-      filter: blur(90px);
-      pointer-events: none;
-      animation: floatGlow 14s ease-in-out infinite alternate;
-    }
+    background:var(--card-bg);
 
-    body::before {
-      width: 48vw;
-      height: 48vw;
-      right: 18vw;
-      top: -18vw;
-      background: rgba(139, 92, 246, 0.12);
-    }
+    backdrop-filter:blur(22px);
 
-    body::after {
-      width: 52vw;
-      height: 52vw;
-      left: 38vw;
-      bottom: -24vw;
-      background: rgba(244, 63, 94, 0.1);
-      animation-delay: -6s;
-    }
+    box-shadow:var(--shadow);
 
-    @keyframes floatGlow {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to { transform: translate3d(26px, 18px, 0) scale(1.08); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-      }
-    }
-
-    a {
-      color: inherit;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    a:hover {
-      color: var(--accent);
-    }
-
-    :focus-visible {
-      outline: 3px solid color-mix(in srgb, var(--accent) 72%, white);
-      outline-offset: 3px;
-      border-radius: 10px;
-    }
-
-    .glow-wrapper {
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .glow-blob {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(70px);
-      opacity: 0.72;
-      animation: floatGlow 12s ease-in-out infinite alternate;
-    }
-
-    .glow-blob-1 {
-      width: 340px;
-      height: 340px;
-      left: -110px;
-      top: 12vh;
-      background: rgba(14, 165, 233, 0.14);
-    }
-
-    .glow-blob-2 {
-      width: 420px;
-      height: 420px;
-      right: -120px;
-      bottom: 5vh;
-      background: rgba(244, 63, 94, 0.12);
-      animation-delay: -4s;
-    }
-
-    .portfolio-dashboard,
-    .about-dashboard {
-      position: relative;
-      z-index: 2;
-      grid-template-columns: 326px minmax(0, 1fr);
-      gap: 18px;
-      width: 100%;
-      height: 100svh;
-      padding: 18px;
-      overflow: hidden;
-    }
-
-    .portfolio-dashboard {
-      display: grid;
-    }
-
-    .about-dashboard {
-      display: none;
-    }
-
-    body[data-view="about"] .portfolio-dashboard {
-      display: none;
-    }
-
-    body[data-view="about"] .about-dashboard {
-      display: grid;
-    }
-
-    .sidebar,
-    .summary-card,
-    .clickable-tab,
-    .education-wrapper,
-    .languages-wrapper {
-      border: 1px solid color-mix(in srgb, var(--border-color) 38%, transparent);
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(24px) saturate(1.12);
-      position: relative;
-  overflow: hidden;
-    }
-   .experience-card {
-  position: relative;
-  overflow: hidden;
+    padding:16px 18px;
 }
-
-
-    .sidebar {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      min-width: 0;
-      height: 100%;
-      padding: 22px;
-      border-radius: 26px;
-      overflow: hidden;
-    }
-
-    .sidebar::before {
-      content: "QA";
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-      border-radius: 999px;
-      color: var(--accent);
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      background: color-mix(in srgb, var(--accent) 6%, transparent);
-    }
-
-    . profile-block {
-        min-height: auto;
-  padding: 8px 30px 0 0;
-    }
-
-    .profile-block h1 {
-      margin-bottom: 2px;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw, 3.1rem);
-      font-weight: 700;
-      line-height: 0.88;
-      letter-spacing: 0.01em;
-    }
-
-    .job-title {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  line-height: 1.45;
-  text-transform: uppercase;
-
-  margin-top: 20px;
-  margin-bottom: 24px;
-}
-
-    h2 {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 9px;
-      color: var(--text-main);
-      font-size: 0.76rem;
-      font-weight: 850;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-    h2::before {
-      content: "";
-      width: 18px;
-      height: 1px;
-      background: color-mix(in srgb, var(--accent) 24%, transparent);
-      flex: 0 0 auto;
-    }
-
-    .side-section {
-  min-width: 0;
-}
-
-.side-section:first-of-type {
-  margin-top: -15px;
-}
-
-    .contact-item {
-      margin-bottom: 7px;
-      color: var(--text-muted);
-      font-size: 0.78rem;
-    }
-
-    .contact-item label {
-      display: block;
-      margin-bottom: 1px;
-      color: var(--text-main);
-      font-size: 0.8rem;
-      font-weight: 850;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .contact-item a,
-    .contact-item span {
-      color: var(--text-muted);
-      font-weight: 500;
-      overflow-wrap: anywhere;
-    }
-
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      padding: 3px 6px;
-      border: 1px solid color-mix(in srgb, var(--border-color) 24%, transparent);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-main);
-      font-size: 0.7rem;
-      font-weight: 750;
-      line-height: 1.2;
-      transition: var(--transition);
-    }
-
-    .tag-lang { color: #2c7c96; }
-    .tag-tool { color: #a34a76; }
-    .tag-spec { color: #517f45; }
-    .tag-soft { color: #986829; }
-
-    @media (prefers-color-scheme: dark) {
-      .tag-lang { color: #70d5ef; }
-      .tag-tool { color: #ff8fb9; }
-      .tag-spec { color: #8de183; }
-      .tag-soft { color: #ffc56f; }
-    }
-
-    .main-dashboard {
-      display: grid;
-      grid-template-rows: auto minmax(0, 1fr) minmax(0, 1.05fr);
-      gap: 14px;
-      min-width: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .summary-card {
-      position: relative;
-      min-height: 116px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 22px;
-      border-radius: 26px;
-      overflow: hidden;
-    }
-
+   .sidebar {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     min-width: 0;
+     height: 100%;
+     padding: 22px;
+     border-radius: 26px;
+     overflow: hidden;
+   }
+   .sidebar::before {
+     content: "QA";
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     width: 54px;
+     height: 54px;
+     display: grid;
+     place-items: center;
+     border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+     border-radius: 999px;
+     color: var(--accent);
+     font-family: var(--font-display);
+     font-size: 1.25rem;
+     font-weight: 700;
+     background: color-mix(in srgb, var(--accent) 6%, transparent);
+   }
+   .profile-block {
+     min-height: auto;
+     padding: 8px 30px 0 0;
+   }
+   .profile-block h1 {
+     margin-bottom: 2px;
+     font-family: var(--font-display);
+     font-size: clamp(2rem, 3vw, 3.1rem);
+     font-weight: 700;
+     line-height: 0.88;
+     letter-spacing: 0.01em;
+   }
+   .job-title {
+     color: var(--text-muted);
+     font-size: 0.8rem;
+     font-weight: 800;
+     letter-spacing: 0.13em;
+     line-height: 1.45;
+     text-transform: uppercase;
+     margin-top: 20px;
+     margin-bottom: 24px;
+   }
+   h2 {
+     display: flex;
+     align-items: center;
+     gap: 9px;
+     margin-bottom: 12px;
+     color: var(--text-main);
+     font-size: 0.76rem;
+     font-weight: 850;
+     letter-spacing: 0.17em;
+     text-transform: uppercase;
+   }
+   h2::before {
+     content: "";
+     width: 18px;
+     height: 1px;
+     background: color-mix(in srgb, var(--accent) 24%, transparent);
+     flex: 0 0 auto;
+   }
+   .side-section {
+     min-width: 0;
+   }
+   .side-section:first-of-type {
+     margin-top: -15px;
+   }
+   .contact-item {
+     margin-bottom: 7px;
+     color: var(--text-muted);
+     font-size: 0.78rem;
+   }
+   .contact-item label {
+     display: block;
+     margin-bottom: 1px;
+     color: var(--text-main);
+     font-size: 0.8rem;
+     font-weight: 850;
+     letter-spacing: 0.12em;
+     text-transform: uppercase;
+   }
+   .contact-item a,
+   .contact-item span {
+     color: var(--text-muted);
+     font-weight: 500;
+     overflow-wrap: anywhere;
+   }
+   .skills-container {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 8px;
+   }
+   .tag {
+     padding: 3px 6px;
+     border: 1px solid color-mix(in srgb, var(--border-color) 24%, transparent);
+     border-radius: 999px;
+     background: rgba(255, 255, 255, 0.1);
+     color: var(--text-main);
+     font-size: 0.7rem;
+     font-weight: 750;
+     line-height: 1.2;
+     transition: var(--transition);
+   }
+   .tag-lang { color: #2c7c96; }
+   .tag-tool { color: #a34a76; }
+   .tag-spec { color: #517f45; }
+   .tag-soft { color: #986829; }
+   @media (prefers-color-scheme: dark) {
+     .tag-lang { color: #70d5ef; }
+     .tag-tool { color: #ff8fb9; }
+     .tag-spec { color: #8de183; }
+     .tag-soft { color: #ffc56f; }
+   }
+   .main-dashboard {
+     display: grid;
+     grid-template-rows: auto minmax(0, 1fr) minmax(0, 1.05fr);
+     gap: 14px;
+     min-width: 0;
+     height: 100%;
+     overflow: hidden;
+   }
+   .summary-card {
+     position: relative;
+     min-height: 116px;
+     display: grid;
+     grid-template-columns: minmax(0, 1fr) auto;
+     align-items: center;
+     gap: 18px;
+     padding: 18px 22px;
+     border-radius: 26px;
+     overflow: hidden;
+   }
    .summary-card::after {
-  content: "";
-  position: absolute;
+     content: "";
+     position: absolute;
+     width: 420px;
+     height: 420px;
+     right: -140px;
+     top: -130px;
+     border-radius: 50%;
+     border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+     box-shadow:
+       0 0 0 30px rgba(in srgb, var(--accent) 8%, transparent),
+       0 0 0 60px rgba(in srgb, var(--accent) 6%, transparent),
+       0 0 0 90px rgba(in srgb, var(--accent) 4%, transparent),
+       0 0 0 120px rgba(in srgb, var(--accent) 2%, transparent),
+       0 0 0 150px rgba(in srgb, var(--accent) 1%, transparent);
+   }
+   .summary-card p {
+     max-width: 920px;
+     color: var(--text-muted);
+     font-size: clamp(0.84rem, 1vw, 1rem);
+     font-weight: 500;
+     line-height: 1.52;
+   }
+   .summary-copy {
+     position: relative;
+     z-index: 1;
+     min-width: 0;
+   }
+   .summary-actions {
+     position: relative;
+     z-index: 1;
+     display: grid;
+     gap: 8px;
+     justify-items: end;
+   }
+   .view-button {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     min-width: 168px;
+     min-height: 42px;
+     padding: 10px 15px;
+     border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+     border-radius: 999px;
+     background:
+       linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, transparent), rgba(255, 255, 255, 0.06));
+     color: var(--text-main);
+     font: inherit;
+     font-size: 0.72rem;
+     font-weight: 850;
+     letter-spacing: 0.12em;
+     text-transform: uppercase;
+     cursor: pointer;
+     transition: transform var(--transition), border-color var(--transition), background var(--transition);
+     white-space: nowrap;
+   }
+   .view-button::after {
+     content: ">";
+     color: var(--accent);
+     font-size: 0.95rem;
+     line-height: 1;
+   }
+   .view-button:hover {
+     transform: translateY(-2px);
+     border-color: var(--accent);
+     background:
+       linear-gradient(135deg, color-mix(in srgb, var(--accent) 26%, transparent), rgba(255, 255, 255, 0.1));
+   }
+   .view-note {
+     max-width: 170px;
+     color: var(--text-muted);
+     font-size: 0.7rem;
+     font-weight: 650;
+     line-height: 1.35;
+     text-align: right;
+   }
+   .about-panel,
+   .about-card {
+     border: 1px solid color-mix(in srgb, var(--border-color) 38%, transparent);
+     background: var(--card-bg);
+     box-shadow: var(--shadow);
+     backdrop-filter: blur(22px);
+     border-radius: 26px;
+     overflow: hidden;
+   }
+   .about-panel {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+     min-height: 0;
+     padding: 24px;
+   }
 
-  width: 420px;
-  height: 420px;
+   /* Стилизация интеграции рисунков (Инверсия + Тонирование в нежно-розовый) */
+   .art-bg-embedded {
+     position: absolute;
+     pointer-events: none;
+     z-index: 0;
+     mix-blend-mode: var(--art-blend);
+     opacity: var(--art-opacity);
+     filter: invert(1) sepia(1) saturate(5) hue-rotate(290deg) var(--art-color-filter);
+     user-select: none;
+   }
 
-  right: -140px;
-  top: -130px;
+   /* Применение image_6.png (Пион) в левую панель About Me */
+   .about-panel .art-peony {
+     bottom: -40px;
+     right: -30px;
+     width: 110%;
+     height: auto;
+     transform: rotate(-10deg);
+   }
 
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+   .about-title {
+     max-width: 9ch;
+     font-family: var(--font-display);
+     font-size: clamp(2.4rem, 4vw, 4.5rem);
+     font-weight: 700;
+     line-height: 0.82;
+     letter-spacing: 0.01em;
+     position: relative;
+     z-index: 1;
+   }
+  .about-avatar {
+  width: clamp(180px, 16vw, 220px);
+  height: clamp(180px, 16vw, 220px);
+  margin: 45px auto 24px auto;
+  border-radius: 50% !important; /* Жестко делает контейнер круглым */
+  border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--text-muted) 15%, transparent);
+  overflow: hidden !important;   /* Прячет углы фото, чтобы оно не вылезало наружу */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* Приподнимает фото, чтобы лицо было ровно по центру */
+}
+   .about-lead {
+     max-width: 330px;
+     color: var(--text-muted);
+     font-size: clamp(0.9rem, 1.15vw, 1.08rem);
+     font-weight: 550;
+     line-height: 1.55;
+     margin-top: auto;
+     position: relative;
+     z-index: 2;
+   }
+   .back-button {
+     width: fit-content;
+     min-width: 150px;
+     position: relative;
+     z-index: 2;
+   }
+   .back-button::before {
+     content: "<";
+     color: var(--accent);
+     font-size: 0.95rem;
+     line-height: 1;
+   }
+   .about-main {
+     position: relative;
+     display: grid;
+     grid-template-rows: 1fr 1fr;
+     gap: 18px;
+     min-width: 0;
+     min-height: 0;
+   }
 
-  box-shadow:
-    0 0 0 30px rgba(in srgb, var(--accent) 8%, transparent),
-    0 0 0 60px rgba(in srgb, var(--accent) 6%, transparent),
-    0 0 0 90px rgba(in srgb, var(--accent) 4%, transparent),
-    0 0 0 120px rgba(in srgb, var(--accent) 2%, transparent),
-    0 0 0 150px rgba(in srgb, var(--accent) 1%, transparent);
+   /* Общий фоновый штрих image_4.png (Роза) для всей правой секции */
+   .about-main .art-rose-backdrop {
+     position: absolute;
+     top: 15%;
+     left: 20%;
+     width: 60%;
+     opacity: calc(var(--art-opacity) * 0.4);
+     filter: invert(1) sepia(1) saturate(3) hue-rotate(290deg);
+     mix-blend-mode: var(--art-blend);
+     pointer-events: none;
+     z-index: 0;
+   }
+
+   .about-row {
+     display: grid;
+     grid-template-columns: repeat(3, minmax(0, 1fr));
+     gap: 18px;
+     min-height: 0;
+     position: relative;
+     z-index: 1;
+   }
+   .about-row.bottom {
+     grid-template-columns: 1.2fr 0.9fr 0.9fr;
+   }
+   .about-card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-height: 0;
+     padding: 20px;
+     overflow: hidden;
+   }
+   .about-card h2, .about-card p, .about-card ul, .about-card div {
+     position: relative;
+     z-index: 2;
+   }
+
+   /* Применение image_5.png (Магнолия) в карточку What I enjoy */
+   .about-card .art-magnolia {
+     bottom: -50px;
+     right: -40px;
+     width: 85%;
+     transform: rotate(15deg);
+   }
+
+   /* Применение image_7.png (Лотос) в карточку Outside QA */
+   .about-card .art-lotus {
+     bottom: -30px;
+     right: -20px;
+     width: 75%;
+   }
+
+   .about-card::after {
+     content: "";
+     position: absolute;
+     right: -28px;
+     bottom: -28px;
+     width: 92px;
+     height: 92px;
+     border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
+     border-radius: 999px;
+     pointer-events: none;
+     z-index: 1;
+   }
+   .about-card h2 {
+     margin-bottom: 12px;
+   }
+   .about-card p,
+   .about-card li {
+     color: var(--text-muted);
+     font-size: clamp(0.78rem, 0.95vw, 0.95rem);
+     font-weight: 520;
+     line-height: 1.48;
+   }
+   .about-card ul {
+     display: grid;
+     gap: 8px;
+     list-style: none;
+   }
+   .about-card li {
+     position: relative;
+     padding-left: 16px;
+   }
+   .about-card li::before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 0.68em;
+     width: 5px;
+     height: 5px;
+     border-radius: 999px;
+     background: var(--accent);
+   }
+   .mini-tags {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 7px;
+     margin-top: auto;
+     padding-top: 12px;
+   }
+   .mini-tags span {
+     padding: 5px 9px;
+     border: 1px solid var(--border-color);
+     border-radius: 999px;
+     color: var(--text-muted);
+     font-size: 0.68rem;
+     font-weight: 800;
+   }
+   .experience-section,
+   .green-zone {
+     display: flex;
+     flex-direction: column;
+     min-height: 0;
+     overflow: hidden;
+   }
+   .experience-grid {
+     display: grid;
+     grid-template-columns: repeat(3, minmax(0, 1fr));
+     gap: 14px;
+     min-height: 0;
+     flex: 1;
+   }
+   .bottom-layout-grid {
+     display: grid;
+     grid-template-rows: auto auto;
+     gap: 14px;
+     min-height: 0;
+     overflow: hidden;
+   }
+   .projects-flex-matrix {
+     display: grid;
+     grid-template-columns: repeat(5, minmax(0, 1fr));
+     gap: 12px;
+     min-height: 0;
+   }
+   .footer-meta-row{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    width:100%;
 }
 
-    .summary-card p {
-      max-width: 920px;
-      color: var(--text-muted);
-      font-size: clamp(0.84rem, 1vw, 1rem);
-      font-weight: 500;
-      line-height: 1.52;
-    }
+.final-edu{
+    flex:1;
+    min-width:0;
+}
 
-    .summary-copy {
-      position: relative;
-      z-index: 1;
-      min-width: 0;
-    }
+.final-lang{
+    width:260px;
+    flex-shrink:0;
+}
 
-    .summary-actions {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 8px;
-      justify-items: end;
-    }
+.education-horizontal {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 20px;
+   }
+   .education-item {
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+   }
+   .edu-header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 10px;
+   }
+   .edu-header strong {
+     font-size: 0.9rem;
+     line-height: 1.2;
+   }
+   .edu-header span {
+     font-size: 0.8rem;
+     color: var(--text-muted);
+   }
+.more-link {
+     display: inline-flex;
+     align-items: center;
+     padding: 2px 8px;
+     border-radius: 999px;
+     font-size: 0.65rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 0.08em;
+     color: var(--more-color);
+     border: 1px solid rgba(255, 107, 159, 0.35);
+     background: rgba(255, 107, 159, 0.08);
+     cursor: pointer;
+     transition: var(--transition);
+     text-decoration: none;
+     flex-shrink: 0;
+   }
+   .more-link:hover { color: #fff; border-color: var(--more-color); background: var(--more-color); }
+   .clickable-tab {
+     position: relative;
+     width: 100%;
+     min-width: 0;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     padding: 15px;
+     border-radius: 22px;
+     color: inherit;
+     font: inherit;
+     text-align: left;
+     cursor: pointer;
+     overflow: hidden;
+     transition: transform var(--transition), border-color var(--transition), background var(--transition);
+   }
+   .clickable-tab::after {
+    content: "MORE";
 
-    .view-button {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+
+    padding: 4px 10px;
+
+    color: #ff6b9f;
+
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+
+    line-height: 1;
+
+    border: 1px solid rgba(255,107,159,.35);
+    border-radius: 999px;
+
+    background: rgba(255,107,159,.08);
+
+    box-shadow:
+      0 0 8px rgba(255,107,159,.18),
+      inset 0 0 4px rgba(255,107,159,.08);
+
+    pointer-events: none;
+}
+   .clickable-tab:hover {
+     transform: translateY(-2px);
+     border-color: color-mix(in srgb, var(--accent) 20%, transparent);
+     background: var(--card-hover);
+   }
+   .tab-title {
+     display: flex;
+     align-items: baseline;
+     justify-content: space-between;
+     gap: 12px;
+     padding-right: 24px;
+     margin-bottom: 4px;
+     font-size: clamp(0.88rem, 1.05vw, 1.05rem);
+     font-weight: 850;
+     line-height: 1.18;
+   }
+   .tab-title time {
+     color: var(--text-muted);
+     font-size: 0.68rem;
+     font-weight: 750;
+     white-space: nowrap;
+   }
+   .status-dot {
+     display: inline-block;
+     width: 7px;
+     height: 7px;
+     margin-left: auto;
+     border-radius: 50%;
+     background: #22c55e;
+     box-shadow: 0 0 10px rgba(34, 197, 94, 0.55);
+     flex: 0 0 auto;
+   }
+   .company-info,
+   .proj-desc,
+   .meta-text span {
+     color: var(--text-muted);
+   }
+   .company-info {
+     margin-bottom: 8px;
+     font-size: 0.76rem;
+     font-weight: 650;
+     font-style: italic;
+   }
+   .bullet-list {
+     list-style: none;
+   }
+   .bullet-list li {
+     position: relative;
+     margin-bottom: 4px;
+     padding-left: 12px;
+     color: var(--text-muted);
+     font-size: clamp(0.72rem, 0.86vw, 0.88rem);
+     font-weight: 500;
+     line-height: 1.36;
+   }
+   .bullet-list li::before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 0.62em;
+     width: 4px;
+     height: 4px;
+     border-radius: 999px;
+     background: var(--accent);
+   }
+   .proj-desc {
+     margin-top: 6px;
+     padding-right: 4px;
+     font-size: clamp(0.74rem, 0.85vw, 0.85rem);
+     font-weight: 500;
+     line-height: 1.4;
+   }
+   .meta-text {
+     font-size: clamp(0.76rem, 0.9vw, 0.92rem);
+     line-height: 1.35;
+   }
+   .meta-text strong {
+     font-size: clamp(0.78rem, 0.92vw, 0.96rem);
+     font-weight: 850;
+   }
+   .ats-only {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     overflow: hidden;
+     clip: rect(0 0 0 0);
+     white-space: nowrap;
+   }
+   .modal-overlay {
+     position: fixed;
+     inset: 0;
+     z-index: 20;
+     display: grid;
+     place-items: center;
+     padding: 18px;
+     background: var(--modal-overlay);
+     backdrop-filter: blur(6px) saturate(1.04);
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity var(--transition);
+   }
+   .modal-overlay.active {
+     opacity: 1;
+     pointer-events: auto;
+   }
+   .modal-window {
+     position: relative;
+     width: min(850px, 95vw);
+     max-height: min(820px, calc(100svh - 36px));
+     overflow: auto;
+     padding: 32px;
+     border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+     border-radius: 26px;
+     background: color-mix(in srgb, var(--bg-main) 97%, transparent);
+     backdrop-filter: blur(24px) saturate(1.12);
+     box-shadow: 0 20px 74px rgba(0, 0, 0, 0.13);
+     transform: scale(0.96);
+     transition: transform var(--transition);
+   }
+   .modal-overlay.active .modal-window {
+     transform: scale(1);
+   }
+   .modal-close {
+     position: absolute;
+     top: 18px;
+     right: 18px;
+     width: 38px;
+     height: 38px;
+     display: grid;
+     place-items: center;
+     border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+     border-radius: 999px;
+     background: var(--card-bg);
+     color: var(--text-muted);
+     font-size: 1rem;
+     cursor: pointer;
+   }
+   .modal-body h3 {
+     max-width: 88%;
+     margin-bottom: 6px;
+     font-family: var(--font-display);
+     font-size: clamp(1.7rem, 3vw, 2.35rem);
+     font-weight: 700;
+     line-height: 0.98;
+   }
+   .modal-body .modal-subtitle {
+     margin-bottom: 16px;
+     color: var(--text-muted);
+     font-size: 0.88rem;
+     font-weight: 700;
+     font-style: italic;
+   }
+   .modal-body p {
+     margin-bottom: 14px;
+     color: var(--text-main);
+     font-size: 0.95rem;
+   }
+   .modal-body ul {
+     padding-left: 18px;
+   }
+   .modal-body li {
+     margin-bottom: 9px;
+     color: var(--text-muted);
+     font-size: 1rem;
+     line-height: 1.5;
+   }
+   @media (max-width: 1250px), (max-height: 760px) {
+     .portfolio-dashboard {
+       grid-template-columns: 300px minmax(0, 1fr);
+       gap: 12px;
+       padding: 12px;
+     }
+     .sidebar {
+       gap: 12px;
+       padding: 18px;
+       border-radius: 22px;
+     }
+     .profile-block h1 {
+       font-size: 2.15rem;
+     }
+     .job-title, h2 {
+       font-size: 0.68rem;
+     }
+     .contact-item, .tag, .company-info {
+       font-size: 0.68rem;
+     }
+     .main-dashboard {
+       gap: 10px;
+     }
+     .summary-card, .clickable-tab, .education-wrapper, .languages-wrapper {
+       border-radius: 18px;
+     }
+     .summary-card {
+       min-height: 96px;
+       padding: 14px 18px;
+     }
+     .summary-card p {
+       font-size: 0.82rem;
+     }
+     .view-button {
+       min-width: 150px;
+       min-height: 38px;
+       padding: 9px 13px;
+       font-size: 0.66rem;
+     }
+     .about-dashboard {
+       grid-template-columns: 280px minmax(0, 1fr);
+       gap: 12px;
+       padding: 12px;
+     }
+     .about-panel, .about-card {
+       border-radius: 18px;
+       padding: 16px;
+     }
+     .about-main, .about-row, .experience-grid, .bottom-layout-grid, .projects-flex-matrix, .footer-meta-row {
+       gap: 10px;
+     }
+     .clickable-tab {
+       padding: 12px;
+     }
+     /* Ограничиваем интенсивность графики на мелких экранах */
+     .art-bg-embedded {
+       opacity: calc(var(--art-opacity) * 0.7);
+     }
+   }
+   @media (max-width: 1020px) {
+     html, body {
+       height: auto;
+       min-height: 100%;
+       overflow: auto;
+     }
+     .portfolio-dashboard, .about-dashboard {
+       grid-template-columns: 1fr;
+       height: auto;
+       min-height: 100svh;
+       overflow: visible;
+     }
+     .sidebar, .about-panel, .about-main, .about-row, .main-dashboard, .experience-section, .green-zone, .bottom-layout-grid {
+       height: auto;
+       overflow: visible;
+     }
+     .main-dashboard, .about-main, .about-row, .about-row.bottom, .bottom-layout-grid, .experience-grid, .projects-flex-matrix, .footer-meta-row {
+       grid-template-columns: 1fr;
+       grid-template-rows: auto;
+     }
+     .education-horizontal {
+       flex-direction: column;
+       gap: 12px;
+     }
+     .summary-card {
+       min-height: auto;
+       grid-template-columns: 1fr;
+       padding: 20px;
+     }
+     .summary-card::after {
+       display: none;
+     }
+     .summary-actions {
+       justify-items: start;
+     }
+     .view-note {
+       max-width: none;
+       text-align: left;
+     }
+     .about-title {
+       max-width: none;
+       font-size: clamp(3.2rem, 18vw, 5.4rem);
+     }
+     .clickable-tab {
+       min-height: 130px;
+     }
+     .about-panel {
+       height: auto;
+     }
+     .about-lead {
+       margin-top: 20px;
+     }
+     .about-card .art-bg-embedded {
+       width: 45%;
+       bottom: -20px;
+       right: -10px;
+     }
+     .about-panel .art-peony {
+       width: 70%;
+       bottom: -20px;
+     }
+     .final-layout-fix {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 60px; /* Увеличили расстояние между блоками */
+  margin-top: 24px;
+}
+.final-row{
+    display:flex;
+    gap:16px;
+    align-items:stretch;
+}
+
+.final-edu{
+    flex:4;
+}
+
+.final-lang{
+    flex:1.4;
+    min-width:260px;
+}
+.edu-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+}
+.btn-more-compact {
+      padding: 0px 6px;
+      height: 15px;
+      line-height: 18px;
+      border-radius: 4px;
+      font-size: 0.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #ff6b9f;
+      border: 1px solid rgba(255, 107, 159, 0.3);
+      background: rgba(255, 107, 159, 0.05);
+      margin-left: 8px;
+      flex-shrink: 0;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-width: 168px;
-      min-height: 42px;
-      padding: 10px 15px;
-      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-      border-radius: 999px;
-      background:
-        linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, transparent), rgba(255, 255, 255, 0.06));
-      color: var(--text-main);
-      font: inherit;
-      font-size: 0.72rem;
-      font-weight: 850;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
       cursor: pointer;
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
-      white-space: nowrap;
-    }
+  }
+  .btn-more-compact:hover {
+      background: #ff6b9f;
+      color: #fff;
+  }
 
-    .view-button::after {
-      content: ">";
-      color: var(--accent);
-      font-size: 0.95rem;
-      line-height: 1;
-    }
-
-    .view-button:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      background:
-        linear-gradient(135deg, color-mix(in srgb, var(--accent) 26%, transparent), rgba(255, 255, 255, 0.1));
-    }
-
-    .view-note {
-      max-width: 170px;
-      color: var(--text-muted);
-      font-size: 0.7rem;
-      font-weight: 650;
-      line-height: 1.35;
-      text-align: right;
-    }
-
-    .about-panel,
-    .about-card {
-      border: 1px solid color-mix(in srgb, var(--border-color) 38%, transparent);
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(22px);
-      border-radius: 26px;
-      overflow: hidden;
-    }
-
-    .about-panel {
-        position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-height: 0;
-  padding: 24px;
-    }
-    .about-panel::after {
-  content: "";
-  position: absolute;
-
-  width: 520px;
-  height: 520px;
-
-  right: -340px;
-  top: -120px;
-
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
-
-  box-shadow:
-    0 0 0 30px rgba(in srgb, var(--accent) 7%, transparent),
-    0 0 0 60px rgba(in srgb, var(--accent) 5%, transparent),
-    0 0 0 90px rgba(in srgb, var(--accent) 3%, transparent),
-    0 0 0 120px rgba(in srgb, var(--accent) 2%, transparent),
-    0 0 0 150px rgba(in srgb, var(--accent) 1%, transparent);
-
-  pointer-events: none;
+.date-left {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
 }
-
-    .about-panel::before {
-      content: "";
-      position: absolute;
-      right: -74px;
-      top: -74px;
-      width: 230px;
-      height: 230px;
-      border-radius: 999px;
-      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%);
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .about-kicker {
-      color: var(--text-muted);
-      font-size: 0.76rem;
-      font-weight: 850;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .about-title {
-      max-width: 9ch;
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 4vw, 4.5rem);
-      font-weight: 700;
-      line-height: 0.82;
-      letter-spacing: 0.01em;
-    }
-
-    .about-lead {
-      max-width: 330px;
-      color: var(--text-muted);
-      font-size: clamp(0.9rem, 1.15vw, 1.08rem);
-      font-weight: 550;
-      line-height: 1.55;
-      margin-top: 400px;
-    }
-
-    .back-button {
-      width: fit-content;
-      min-width: 150px;
-    }
-
-    .back-button::after {
-      content: "";
-    }
-
-    .back-button::before {
-      content: "<";
-      color: var(--accent);
-      font-size: 0.95rem;
-      line-height: 1;
-    }
-
-    .about-main {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 18px;
-      min-width: 0;
-      min-height: 0;
-    }
-
-    .about-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      min-height: 0;
-    }
-
-    .about-row.bottom {
-      grid-template-columns: 1.2fr 0.9fr 0.9fr;
-    }
-
-    .about-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      padding: 20px;
-    }
-
-    .about-card::after {
-      content: "";
-      position: absolute;
-      right: -28px;
-      bottom: -28px;
-      width: 92px;
-      height: 92px;
-      border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
-      border-radius: 999px;
-      pointer-events: none;
-    }
-
-    .about-card h2 {
-      margin-bottom: 12px;
-    }
-
-    .about-card p,
-    .about-card li {
-      color: var(--text-muted);
-      font-size: clamp(0.78rem, 0.95vw, 0.95rem);
-      font-weight: 520;
-      line-height: 1.48;
-    }
-
-    .about-card ul {
-      display: grid;
-      gap: 8px;
-      list-style: none;
-    }
-
-    .about-card li {
-      position: relative;
-      padding-left: 16px;
-    }
-
-    .about-card li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.68em;
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .mini-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: auto;
-      padding-top: 12px;
-    }
-
-    .mini-tags span {
-      padding: 5px 9px;
-      border: 1px solid var(--border-color);
-      border-radius: 999px;
-      color: var(--text-muted);
-      font-size: 0.68rem;
-      font-weight: 800;
-    }
-
-    .experience-section,
-    .green-zone {
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      min-height: 0;
-      flex: 1;
-    }
-
-    .bottom-layout-grid {
-      display: grid;
-      grid-template-columns: minmax(210px, 0.72fr) minmax(0, 2fr);
-      gap: 14px;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    .orange-zone {
-      display: grid;
-      grid-template-rows: 1fr 0.4fr;
-      gap: 14px;
-      min-height: 0;
-    }
-
-    .education-wrapper,
-    .languages-wrapper {
-      padding: 15px;
-      border-radius: 22px;
-    }
-
-    .projects-flex-matrix {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 12px;
-      min-height: 0;
-      flex: 1;
-    }
-
-    .proj-row-top,
-    .proj-row-bottom {
-      display: grid;
-      gap: 12px;
-      min-height: 0;
-    }
-
-    .proj-row-top {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .proj-row-bottom {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .clickable-tab {
-      position: relative;
-      width: 100%;
-      min-width: 0;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 15px;
-      border-radius: 22px;
-      color: inherit;
-      font: inherit;
-      text-align: left;
-      cursor: pointer;
-      overflow: hidden;
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .clickable-tab::before {
-      display: none;
-    }
-
-    .clickable-tab::after {
-      content: "+";
-      position: absolute;
-      right: 17px;
-      top: 12px;
-      color: color-mix(in srgb, var(--accent) 55%, transparent);
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 900;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .clickable-tab:hover {
-      transform: translateY(-2px);
-      border-color: color-mix(in srgb, var(--accent) 20%, transparent);
-      background: var(--card-hover);
-    }
-
-    .tab-title {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      padding-right: 24px;
-      margin-bottom: 4px;
-      font-size: clamp(0.88rem, 1.05vw, 1.05rem);
-      font-weight: 850;
-      line-height: 1.18;
-    }
-
-    .tab-title time {
-      color: var(--text-muted);
-      font-size: 0.68rem;
-      font-weight: 750;
-      white-space: nowrap;
-    }
-
-    .status-dot {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      margin-left: auto;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.55);
-      flex: 0 0 auto;
-    }
-
-    .company-info,
-    .proj-desc,
-    .meta-text span {
-      color: var(--text-muted);
-    }
-
-    .company-info {
-      margin-bottom: 8px;
-      font-size: 0.76rem;
-      font-weight: 650;
-      font-style: italic;
-    }
-
-    .bullet-list {
-      list-style: none;
-    }
-
-    .bullet-list li {
-      position: relative;
-      margin-bottom: 4px;
-      padding-left: 12px;
-      color: var(--text-muted);
-      font-size: clamp(0.72rem, 0.86vw, 0.88rem);
-      font-weight: 500;
-      line-height: 1.36;
-    }
-
-    .bullet-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.62em;
-      width: 4px;
-      height: 4px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .proj-desc {
-      margin-top: 4px;
-      padding-right: 12px;
-      font-size: clamp(0.74rem, 0.9vw, 0.9rem);
-      font-weight: 500;
-      line-height: 1.42;
-    }
-
-    .meta-text {
-      margin-bottom: 9px;
-      font-size: clamp(0.76rem, 0.9vw, 0.92rem);
-      line-height: 1.35;
-    }
-
-    .meta-text strong {
-      font-size: clamp(0.78rem, 0.92vw, 0.96rem);
-      font-weight: 850;
-    }
-
-    .ats-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      white-space: nowrap;
-    }
-
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 20;
-      display: grid;
-      place-items: center;
-      padding: 18px;
-      background: var(--modal-overlay);
-      backdrop-filter: blur(6px) saturate(1.04);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity var(--transition);
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .modal-window {
-      position: relative;
-      width: min(850px, 95vw);
-      max-height: min(820px, calc(100svh - 36px));
-      overflow: auto;
-      padding: 32px;
-      border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
-      border-radius: 26px;
-      background: color-mix(in srgb, var(--bg-main) 97%, transparent);
-      backdrop-filter: blur(24px) saturate(1.12);
-      box-shadow: 0 20px 74px rgba(0, 0, 0, 0.13);
-      transform: scale(0.96);
-      transition: transform var(--transition);
-    }
-
-    .modal-overlay.active .modal-window {
-      transform: scale(1);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
-      border-radius: 999px;
-      background: var(--card-bg);
-      color: var(--text-muted);
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .modal-body h3 {
-      max-width: 88%;
-      margin-bottom: 6px;
-      font-family: var(--font-display);
-      font-size: clamp(1.7rem, 3vw, 2.35rem);
-      font-weight: 700;
-      line-height: 0.98;
-    }
-
-    .modal-body .modal-subtitle {
-      margin-bottom: 16px;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      font-weight: 700;
-      font-style: italic;
-    }
-
-    .modal-body p {
-      margin-bottom: 14px;
-      color: var(--text-main);
-      font-size: 0.95rem;
-    }
-
-    .modal-body ul {
-      padding-left: 18px;
-    }
-
-    .modal-body li {
-      margin-bottom: 9px;
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 1180px), (max-height: 740px) {
-      .portfolio-dashboard {
-        grid-template-columns: 300px minmax(0, 1fr);
-        gap: 12px;
-        padding: 12px;
-      }
-
-      .sidebar {
-        gap: 12px;
-        padding: 18px;
-        border-radius: 22px;
-      }
-
-      .profile-block {
-        min-height: 102px;
-        padding-bottom: 12px;
-      }
-
-      .profile-block h1 {
-        font-size: 2.15rem;
-      }
-
-      .job-title,
-      h2 {
-        font-size: 0.68rem;
-      }
-
-      .contact-item,
-      .tag,
-      .company-info {
-        font-size: 0.68rem;
-      }
-
-      .main-dashboard {
-        gap: 10px;
-      }
-
-      .summary-card,
-      .clickable-tab,
-      .education-wrapper,
-      .languages-wrapper {
-        border-radius: 18px;
-      }
-
-      .summary-card {
-        min-height: 96px;
-        padding: 14px 18px;
-      }
-
-      .summary-card p {
-        font-size: 0.82rem;
-      }
-
-      .view-button {
-        min-width: 150px;
-        min-height: 38px;
-        padding: 9px 13px;
-        font-size: 0.66rem;
-      }
-
-      .about-dashboard {
-        grid-template-columns: 280px minmax(0, 1fr);
-        gap: 12px;
-        padding: 12px;
-      }
-
-      .about-panel,
-      .about-card {
-        border-radius: 18px;
-      }
-
-      .about-panel,
-      .about-card {
-        padding: 16px;
-      }
-
-      .about-main,
-      .about-row {
-        gap: 10px;
-      }
-
-      .experience-grid,
-      .bottom-layout-grid,
-      .orange-zone,
-      .projects-flex-matrix,
-      .proj-row-top,
-      .proj-row-bottom {
-        gap: 10px;
-      }
-
-      .clickable-tab,
-      .education-wrapper,
-      .languages-wrapper {
-        padding: 12px;
-      }
-    }
-
-    @media (max-width: 920px) {
-      html,
-      body {
-        height: auto;
-        min-height: 100%;
-        overflow: auto;
-      }
-
-      .portfolio-dashboard,
-      .about-dashboard {
-        display: grid;
-        grid-template-columns: 1fr;
-        height: auto;
-        min-height: 100svh;
-        overflow: visible;
-      }
-
-      .sidebar,
-      .about-panel,
-      .about-main,
-      .about-row,
-      .main-dashboard,
-      .experience-section,
-      .green-zone,
-      .bottom-layout-grid {
-        height: auto;
-        overflow: visible;
-      }
-
-      .main-dashboard,
-      .about-main,
-      .about-row,
-      .about-row.bottom,
-      .bottom-layout-grid,
-      .experience-grid,
-      .proj-row-top,
-      .proj-row-bottom,
-      .orange-zone {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-
-      .summary-card {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        padding: 20px;
-      }
-
-      .summary-card::after {
-        display: none;
-      }
-
-      .summary-actions {
-        justify-items: start;
-      }
-
-      .view-note {
-        max-width: none;
-        text-align: left;
-      }
-
-      .about-title {
-        max-width: none;
-        font-size: clamp(3.2rem, 18vw, 5.4rem);
-      }
-
-      .clickable-tab {
-        min-height: 150px;
-      }
-    }
-  </style>
+   Для того чтобы даты в Professional Experience выравнивались влево, а кнопки «MORE» в Projects были компактными и смещенными вправо, нам нужно применить flex-верстку к заголовкам каждой карточки.
+
+Ниже приведен готовый код. Вам нужно найти в вашем index.html блоки clickable-tab и заменить их содержимое на предложенное.
+
+1. Добавьте в <style> (чтобы задать отступы):
+CSS
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.date-left {
+    text-align: left;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 8px;
+}
+.btn-more-compact {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.55rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ff6b9f;
+    border: 1px solid rgba(255, 107, 159, 0.4);
+    background: rgba(255, 107, 159, 0.08);
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+   }
+ </style>
 </head>
-<body data-view="resume">
-  <div class="glow-wrapper" aria-hidden="true">
-    <div class="glow-blob glow-blob-1"></div>
-    <div class="glow-blob glow-blob-2"></div>
-  </div>
+<body>
+ <div class="glow-wrapper" aria-hidden="true">
+   <div class="glow-blob glow-blob-1"></div>
+   <div class="glow-blob glow-blob-2"></div>
+ </div>
+ <div class="portfolio-dashboard">
+   <aside class="sidebar" aria-label="Contacts and skills">
+     <div class="profile-block">
+       <h1>Arina Turgeneva</h1>
+       <div class="job-title">QA ENGINEER · MANUAL & AUTOMATION TESTING<br>PLAYWRIGHT · TYPESCRIPT</div>
+     </div>
+     <section class="side-section" aria-labelledby="contacts-title">
+       <h2 id="contacts-title">Contacts</h2>
+       <div class="contacts-wrapper">
+         <div class="contact-item"><label>Location</label><span>Tallinn, Harjumaa, Estonia</span></div>
+         <div class="contact-item"><label>Phone</label><a href="tel:+37256938555">+372 56938555</a></div>
+         <div class="contact-item"><label>Email</label><a href="mailto:arina.turgeneva98@gmail.com">arina.turgeneva98@gmail.com</a></div>
+         <div class="contact-item"><label>LinkedIn</label><a href="https://www.linkedin.com/in/arina-turgeneva-07041a310" target="_blank" rel="noopener noreferrer">linkedin/arina-turgeneva</a></div>
+       </div>
+     </section>
+     <section class="side-section" aria-labelledby="hard-skills-title">
+       <h2 id="hard-skills-title">Hard Skills</h2>
+       <div class="skills-container">
+         <span class="tag tag-lang">TypeScript</span>
+         <span class="tag tag-lang">Python</span>
+         <span class="tag tag-lang">HTML / CSS</span>
+         <span class="tag tag-tool">Playwright</span>
+         <span class="tag tag-tool">Postman</span>
+         <span class="tag tag-tool">Swagger</span>
+         <span class="tag tag-tool">DBeaver</span>
+         <span class="tag tag-spec">API Testing</span>
+         <span class="tag tag-spec">SQL</span>
+         <span class="tag tag-spec">Manual Testing</span>
+         <span class="tag tag-spec">Test Documentation</span>
+         <span class="tag tag-spec">WordPress CMS</span>
+         <span class="tag tag-tool">YouTrack</span>
+         <span class="tag tag-tool">Miro</span>
+         <span class="tag tag-tool">Asana</span>
+       </div>
+     </section>
+     <section class="side-section" aria-labelledby="soft-skills-title">
+       <h2 id="soft-skills-title">Soft Skills</h2>
+       <div class="skills-container">
+         <span class="tag tag-soft">Mentorship</span>
+         <span class="tag tag-soft">Coordination</span>
+         <span class="tag tag-soft">Team Leadership</span>
+         <span class="tag tag-soft">Analytical Thinking</span>
+         <span class="tag tag-soft">People Management</span>
+         <span class="tag tag-soft">Agile Collaboration</span>
+         <span class="tag tag-soft">Time management</span>
+         <span class="tag tag-soft">Quick learner</span>
+       </div>
+     </section>
+   </aside>
+   <main class="main-dashboard">
+     <section class="summary-card" aria-labelledby="summary-title">
+       <div class="summary-copy">
+         <h2 id="summary-title">Profile Summary</h2>
+         <p>
+           QA Engineer and Internship Supervisor with hands-on experience in manual testing,
+           QA documentation, WordPress administration, UI validation, and cross-functional collaboration.
+           Experienced in coordinating QA workflows, reviewing test artifacts, mentoring junior testers,
+           supporting production web projects, and validating API and database-related functionality.
+         </p>
+         <p class="ats-only">
+           Keywords: manual QA, automated testing basics, Playwright, TypeScript, Python, API testing,
+           Postman, Swagger, SQL, DBeaver, YouTrack, Asana, Miro, WordPress CMS, HTML, CSS, regression testing,
+           usability testing, cross-browser testing, bug reports, test cases, checklists, defect lifecycle.
+         </p>
+       </div>
+       <div class="summary-actions">
+         <button class="view-button" type="button" data-view-target="about">Get to know me</button>
+         <span class="view-note">The person behind the QA role.</span>
+       </div>
+     </section>
+<section class="experience-section" aria-labelledby="experience-title">
+  <h2 id="experience-title">Professional Experience</h2>
+  <div class="experience-grid">
 
-  <div class="portfolio-dashboard">
-    <aside class="sidebar" aria-label="Contacts and skills">
-      <div class="profile-block">
-        <h1>Arina Turgeneva</h1>
-<div class="job-title">QA ENGINEER · MANUAL & AUTOMATION TESTING<br>PLAYWRIGHT · TYPESCRIPT</div>      </div>
 
-      <section class="side-section" aria-labelledby="contacts-title">
-        <h2 id="contacts-title">Contacts</h2>
-        <div class="contacts-wrapper">
-          <div class="contact-item"><label>Location</label><span>Tallinn, Harjumaa, Estonia</span></div>
-          <div class="contact-item"><label>Phone</label><a href="tel:+37256938555">+372 56938555</a></div>
-          <div class="contact-item"><label>Email</label><a href="mailto:arina.turgeneva98@gmail.com">arina.turgeneva98@gmail.com</a></div>
-          <div class="contact-item"><label>LinkedIn</label><a href="https://www.linkedin.com/in/arina-turgeneva-07041a310" target="_blank" rel="noopener noreferrer">linkedin/arina-turgeneva</a></div>
-        </div>
-      </section>
-
-      <section class="side-section" aria-labelledby="hard-skills-title">
-        <h2 id="hard-skills-title">Hard Skills</h2>
-        <div class="skills-container">
-          <span class="tag tag-lang">TypeScript</span>
-          <span class="tag tag-lang">Python</span>
-          <span class="tag tag-lang">HTML / CSS</span>
-          <span class="tag tag-tool">Playwright</span>
-          <span class="tag tag-tool">Postman</span>
-          <span class="tag tag-tool">Swagger</span>
-          <span class="tag tag-tool">DBeaver</span>
-          <span class="tag tag-spec">API Testing</span>
-          <span class="tag tag-spec">SQL</span>
-          <span class="tag tag-spec">Manual Testing</span>
-          <span class="tag tag-spec">Test Documentation</span>
-          <span class="tag tag-spec">WordPress CMS</span>
-<span class="tag tag-tool">YouTrack</span>
-<span class="tag tag-tool">Miro</span>
-            <span class="tag tag-tool">Asana</span>
-        </div>
-      </section>
-
-      <section class="side-section" aria-labelledby="soft-skills-title">
-        <h2 id="soft-skills-title">Soft Skills</h2>
-        <div class="skills-container">
-          <span class="tag tag-soft">Mentorship</span>
-          <span class="tag tag-soft">Coordination</span>
-          <span class="tag tag-soft">Team Leadership</span>
-          <span class="tag tag-soft">Analytical Thinking</span>
-          <span class="tag tag-soft">People Management</span>
-          <span class="tag tag-soft">Agile Collaboration</span>
-            <span class="tag tag-soft">Time management</span>
-            <span class="tag tag-soft">Quick learner</span>
-        </div>
-      </section>
-    </aside>
-
-    <main class="main-dashboard">
-      <section class="summary-card" aria-labelledby="summary-title">
-        <div class="summary-copy">
-          <h2 id="summary-title">Profile Summary</h2>
-          <p>
-            QA Engineer and Internship Supervisor with hands-on experience in manual testing,
-            QA documentation, WordPress administration, UI validation, and cross-functional collaboration.
-            Experienced in coordinating QA workflows, reviewing test artifacts, mentoring junior testers,
-            upporting production web projects, and validating API and database-related functionality.
-          </p>
-          <p class="ats-only">
-            Keywords: manual QA, automated testing basics, Playwright, TypeScript, Python, API testing,
-            Postman, Swagger, SQL, DBeaver, YouTrack, Asana, Miro, WordPress CMS, HTML, CSS, regression testing,
-            usability testing, cross-browser testing, bug reports, test cases, checklists, defect lifecycle.
-          </p>
-        </div>
-        <div class="summary-actions">
-          <button class="view-button" type="button" data-view-target="about">Get to know me</button>
-          <span class="view-note">The person behind the QA role.</span>
-        </div>
-      </section>
-
-      <section class="experience-section" aria-labelledby="experience-title">
-        <h2 id="experience-title">Professional Experience</h2>
-        <div class="experience-grid">
-          <button class="clickable-tab" type="button" data-modal="exp1">
-            <div class="tab-title">
-              <span>QA Supervisor</span>
-              <span class="status-dot" aria-hidden="true"></span>
-              <time>2024 - Pres.</time>
-            </div>
-            <div class="company-info">Tallinn Learning | Internship Management</div>
-            <ul class="bullet-list">
-              <li>Coordinated QA internship workflows across multiple live projects.</li>
-              <li>Reviewed 500+ defect reports, test cases, and testing artifacts via YouTrack.</li>
-              <li>Mentored junior testers in bug reporting, documentation, and testing practices.</li>
-                <li>Managed communication with stakeholders and supervised QA deliverables.</li>
-            </ul>
-          </button>
-
-          <button class="clickable-tab" type="button" data-modal="exp2">
-            <div class="tab-title">
-              <span>Web Quality Spec.</span>
-              <span class="status-dot" aria-hidden="true"></span>
-              <time>2024 - Pres.</time>
-            </div>
-            <div class="company-info">Liven Project / Mynted | UI/UX</div>
-            <ul class="bullet-list">
-              <li>Maintained and updated website content through WordPress CMS.</li>
-              <li>Performed UI validation, usability reviews and bug identification.</li>
-              <li>Created and customized page layouts using HTML/CSS components.</li>
-            </ul>
-          </button>
-
-          <button class="clickable-tab" type="button" data-modal="exp3">
-            <div class="tab-title">
-              <span>Art & Digital Design Teacher</span>
-              <span class="status-dot" aria-hidden="true"></span>
-              <time>2020 - Pres.</time>
-            </div>
-            <div class="company-info">Tallinna Tondiraba Huvikool</div>
-            <ul class="bullet-list">
-              <li>Taught ceramics, visual arts, and creative design to children.</li>
-              <li>Led graphic design and digital creativity workshops.</li>
-              <li>Developed educational programs and project-based activities.</li>
-            </ul>
-          </button>
-        </div>
-      </section>
-
-      <section class="bottom-layout-grid" aria-label="Education, languages, and projects">
-        <div class="orange-zone">
-          <div class="education-wrapper">
-  <h2>Education</h2>
-
-  <div class="meta-text">
-    <strong>Automation QA Course</strong><br />
-    <span>Tallinn Learning | May - Sep 2025</span>
-  </div>
-
-  <div class="meta-text">
-    <strong>QA Engineer Course</strong><br />
-    <span>Tallinn Learning | Feb - Jun 2024</span>
-  </div>
-
-  <div class="meta-text">
-    <strong>EKA Bachelor Degree</strong><br />
-    <span>Estonian Academy of Arts | 2017 - 2020</span>
-  </div>
-
-</div>
-
-          <div class="languages-wrapper">
-            <h2>Languages</h2>
-            <div class="meta-text">
-  Russian (C2) · Estonian (C1) · English (B2)
-</div>
-          </div>
-        </div>
-
-        <div class="green-zone">
-          <h2>Production Internships & Projects</h2>
-          <div class="projects-flex-matrix">
-            <div class="proj-row-top">
-  <button class="clickable-tab" type="button" data-modal="proj4">
-    <div class="tab-title">Gratheon Ecosystem</div>
-    <div class="proj-desc">
-      First production QA internship: microservices, configurations and release validation.
-    </div>
-  </button>
-
-  <button class="clickable-tab" type="button" data-modal="proj1">
-    <div class="tab-title">MultiKey Platform</div>
-    <div class="proj-desc">
-       End-to-end mobile testing, user account validation, localization checks and bug investigation.
-    </div>
-  </button>
-
-  <button class="clickable-tab" type="button" data-modal="proj2">
-    <div class="tab-title">FinMind Platform</div>
-    <div class="proj-desc">
-      E-learning platform testing, localization validation, user progress tracking and quiz workflows.
-    </div>
-  </button>
-</div>
-
-<div class="proj-row-bottom">
-  <button class="clickable-tab" type="button" data-modal="proj3">
-    <div class="tab-title">Ydalir Ecosystem</div>
-    <div class="proj-desc">
-      Large-scale website testing, responsive validation, cross-browser checks and bug reporting.
-    </div>
-  </button>
-
-  <button class="clickable-tab" type="button" data-modal="proj5">
-    <div class="tab-title">EventPanel Platform</div>
-    <div class="proj-desc">
-      Web, mobile and CLI testing, code generation validation, regression testing and QA mentorship.
-    </div>
-  </button>
-</div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <section class="about-dashboard" aria-label="About Arina Turgeneva">
-    <aside class="about-panel">
-        <button class="view-button back-button" type="button" data-view-target="resume">Back to resume</button>
-      <div>
-        <h1 class="about-title">About me</h1>
+    <button class="clickable-tab" type="button" data-modal="exp1">
+      <div class="tab-title" style="display: flex; align-items: baseline; justify-content: flex-start; gap: 8px;">
+        <span style="font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">QA Supervisor</span>
+        <time style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); flex-shrink: 0;">2024 - Pres.</time>
+        <span style="display: none !important;"></span>
       </div>
+      <div class="company-info" style="margin-top: 4px; text-align: left;">Tallinn Learning | Internship Management</div>
+      <ul class="bullet-list" style="text-align: left;">
+        <li>Coordinated QA internship workflows across multiple live projects.</li>
+        <li>Reviewed 500+ defect reports, test cases, and testing artifacts via YouTrack.</li>
+        <li>Mentored junior testers in bug reporting, documentation, and testing practices.</li>
+        <li>Managed communication with stakeholders and supervised QA deliverables.</li>
+      </ul>
+    </button>
 
-      <p class="about-lead">
-        I like work where details matter: finding the small inconsistency, making a flow clearer,
-        and helping a team turn messy information into something structured and useful.
-      </p>
 
-    </aside>
-
-    <div class="about-main">
-      <div class="about-row">
-        <article class="about-card">
-          <h2>How I work</h2>
-          <p>
-         I like finding the details that others might miss. Whether it is a confusing user flow, an inconsistent interface, or a gap in documentation, I enjoy turning problems into clear and actionable improvements.
-
-My background in teaching, mentoring and QA coordination helps me communicate clearly, organize information and bring structure to complex processes.
-          </p>
-          <div class="mini-tags">
-            <span>Clear reports</span>
-            <span>Structure</span>
-            <span>Calm focus</span>
-          </div>
-        </article>
-
-        <article class="about-card">
-          <h2>Experience lens</h2>
-          <p>
-         My background in visual arts, design and education helps me approach products from both a usability and visual perspective. I pay attention not only to functionality, but also to layout consistency, readability, visual hierarchy and the overall user experience.
-
-This often helps me identify UI inconsistencies, confusing interfaces and design details that can affect how users interact with a product.
-          </p>
-          <div class="mini-tags">
-            <span>Mentorship</span>
-            <span>UX awareness</span>
-            <span>Teamwork</span>
-          </div>
-        </article>
-
-        <article class="about-card">
-          <h2>What I am growing</h2>
-          <ul>
-            <li>Automation practice with Playwright and TypeScript.</li>
-            <li>API exploration and backend validation.</li>
-            <li>Stronger SQL skills for data investigation.</li>
-              <li>Better test design and documentation practices.</li>
-              <li>Applying design and visual thinking to improve usability and interface quality.</li>
-          </ul>
-        </article>
+    <button class="clickable-tab" type="button" data-modal="exp2">
+      <div class="tab-title" style="display: flex; align-items: baseline; justify-content: flex-start; gap: 8px;">
+        <span style="font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">Web Quality Spec.</span>
+        <time style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); flex-shrink: 0;">2024 - Pres.</time>
+        <span style="display: none !important;"></span>
       </div>
+      <div class="company-info" style="margin-top: 4px; text-align: left;">Liven Project / Mynted | UI/UX</div>
+      <ul class="bullet-list" style="text-align: left;">
+        <li>Maintained and updated website content through WordPress CMS.</li>
+        <li>Performed UI validation, usability reviews and bug identification.</li>
+        <li>Created and customized page layouts using HTML/CSS components.</li>
+      </ul>
+    </button>
 
-      <div class="about-row bottom">
-        <article class="about-card">
-          <h2>What I enjoy</h2>
-          <ul>
-            <li>Creating things with my hands, from ceramics to digital projects.</li>
-            <li>Visual design, composition, and thoughtful details.</li>
-            <li>Learning new skills through experimentation and curiosity.</li>
-            <li>Turning ideas into something tangible, useful or beautiful.</li>
-              <li>Finding inspiration in both art and technology.</li>
-              <li>Exploring game ideas, worldbuilding and creative storytelling.</li>
-          </ul>
-        </article>
+    <!-- Art & Digital Design Teacher -->
+    <button class="clickable-tab" type="button" data-modal="exp3">
+      <div class="tab-title" style="display: flex; align-items: baseline; justify-content: flex-start; gap: 8px;">
+        <span style="font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">Art & Digital Design Teacher</span>
+        <time style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); flex-shrink: 0;">2020 - Pres.</time>
+        <span style="display: none !important;"></span>
+      </div>
+      <div class="company-info" style="margin-top: 4px; text-align: left;">Tallinna Tondiraba Huvikool</div>
+      <ul class="bullet-list" style="text-align: left;">
+        <li>Taught ceramics, visual arts, and creative design to children.</li>
+        <li>Led graphic design and digital creativity workshops.</li>
+        <li>Developed educational programs and project-based activities.</li>
+      </ul>
+    </button>
 
-        <article class="about-card">
-          <h2>Strengths</h2>
-          <ul>
-            <li>Naturally organized and good at bringing structure to chaos.</li>
-            <li>Open communication and supportive teamwork.</li>
-            <li>Comfortable guiding, mentoring and coordinating people.</li>
-              <li>Positive attitude and a good sense of humor.</li>
-              <li>Patient, adaptable and solution-oriented.</li>
-              <li>Discovering new creative hobbies and skills.</li>
-          </ul>
-        </article>
+  </div>
+</section>
+     <section class="bottom-layout-grid" aria-label="Education, languages, and projects">
+       <div class="green-zone">
+         <h2>Production Internships & Projects</h2>
+         <div class="projects-flex-matrix">
+           <button class="clickable-tab" type="button" data-modal="proj4">
+             <div class="tab-title">Gratheon</div>
+             <div class="proj-desc">First production QA internship: microservices, configurations and release validation.</div>
+           </button>
+           <button class="clickable-tab" type="button" data-modal="proj1">
+             <div class="tab-title">MultiKey</div>
+             <div class="proj-desc">End-to-end mobile testing, user account validation, localization checks and bug investigation.</div>
+           </button>
+           <button class="clickable-tab" type="button" data-modal="proj2">
+             <div class="tab-title">FinMind</div>
+             <div class="proj-desc">E-learning platform testing, localization validation, user progress tracking and quiz workflows.</div>
+           </button>
+           <button class="clickable-tab" type="button" data-modal="proj3">
+             <div class="tab-title">Ydalir</div>
+             <div class="proj-desc">Large-scale website testing, responsive validation, cross-browser checks and bug reporting.</div>
+           </button>
+           <button class="clickable-tab" type="button" data-modal="proj5">
+             <div class="tab-title">EventPanel</div>
+             <div class="proj-desc">Web, mobile and CLI testing, code generation validation, regression testing and QA mentorship.</div>
+           </button>
+         </div>
+       </div>
+       <div class="footer-meta-row final-layout-fix">
 
-        <article class="about-card">
-          <h2>Outside QA</h2>
-          <p>
+    <div class="final-edu">
+        <h2 style="margin-top:0;">Education</h2>
+        <div class="education-horizontal">
+
+    <div class="education-item">
+        <div style="display:flex; justify-content:flex-start; align-items:center; gap: 10px;">
+            <strong style="font-size:0.95rem;">Automation QA Course</strong>
+            <button type="button" data-modal="cert1" style="padding:2px 10px; border-radius:999px; font-size:0.6rem; font-weight:800; text-transform:uppercase; color:#ff6b9f; border:1px solid rgba(255,107,159,0.4); background:rgba(255,107,159,0.1); cursor:pointer;">MORE</button>
+        </div>
+        <span style="display:block; margin-top:4px; font-size:0.82rem; color:var(--text-muted);">Tallinn Learning | May - Sep 2025</span>
+    </div>
+
+    <div class="education-item">
+        <div style="display:flex; justify-content:flex-start; align-items:center; gap: 10px;">
+            <strong style="font-size:0.95rem;">QA Engineer Course</strong>
+            <button type="button" data-modal="cert2" style="padding:2px 10px; border-radius:999px; font-size:0.6rem; font-weight:800; text-transform:uppercase; color:#ff6b9f; border:1px solid rgba(255,107,159,0.4); background:rgba(255,107,159,0.1); cursor:pointer;">MORE</button>
+        </div>
+        <span style="display:block; margin-top:4px; font-size:0.82rem; color:var(--text-muted);">Tallinn Learning | Feb - Jun 2024</span>
+    </div>
+
+            <!-- Курс 3 (без ссылки) -->
+            <div class="education-item">
+                <strong style="font-size:0.95rem;">EKA Bachelor Degree</strong>
+                <span style="display:block; margin-top:4px; font-size:0.82rem; color:var(--text-muted);">Estonian Academy of Arts | 2017 - 2020</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Секция Languages -->
+    <div class="languages-wrapper final-lang">
+        <h2>Languages</h2>
+        <div class="meta-text">
+            Russian (C2) · Estonian (C1) · English (B2)
+        </div>
+    </div>
+</div>
+  </div>
+
+</div>
+     </section>
+   </main>
+ </div>
+ <section class="about-dashboard" aria-label="About Arina Turgeneva">
+   <aside class="about-panel">
+     <!-- Интеграция image_6.png (Пион) как подложка левой панели -->
+     <img src="image_6.png" alt="" class="art-bg-embedded art-peony" aria-hidden="true">
+
+     <button class="view-button back-button" type="button" data-view-target="resume">Back to resume</button>
+     <div><h1 class="about-title">About me</h1></div>
+
+     <div class="about-avatar">
+       <img src="image_8.png" alt="Arina Turgeneva" class="profile-avatar">
+     </div>
+
+     <p class="about-lead">
+       I like work where details matter: finding the small inconsistency, making a flow clearer,
+       and helping a team turn messy information into something structured and useful.
+     </p>
+   </aside>
+   <div class="about-main">
+     <img src="image_4.png" alt="" class="art-rose-backdrop" aria-hidden="true">
+
+     <div class="about-row">
+       <article class="about-card">
+         <h2>How I work</h2>
+         <p>
+           I like finding the details that others might miss. Whether it is a confusing user flow, an inconsistent interface, or a gap in documentation, I enjoy turning problems into clear and actionable improvements.
+           My background in teaching, mentoring and QA coordination helps me communicate clearly, organize information and bring structure to complex processes.
+         </p>
+         <div class="mini-tags"><span>Clear reports</span><span>Structure</span><span>Calm focus</span></div>
+       </article>
+       <article class="about-card">
+         <h2>Experience lens</h2>
+         <p>
+           My background in visual arts, design and education helps me approach products from both a usability and visual perspective. I pay attention not only to functionality, but also to layout consistency, readability, visual hierarchy and the overall user experience.
+           This often helps me identify UI inconsistencies, confusing interfaces and design details that can affect how users interact with a product.
+         </p>
+         <div class="mini-tags"><span>Mentorship</span><span>UX awareness</span><span>Teamwork</span></div>
+       </article>
+       <article class="about-card">
+         <h2>What I am growing</h2>
+         <ul>
+           <li>Automation practice with Playwright and TypeScript.</li>
+           <li>API exploration and backend validation.</li>
+           <li>Stronger SQL skills for data investigation.</li>
+           <li>Better test design and documentation practices.</li>
+           <li>Applying design and visual thinking to improve usability and interface quality.</li>
+         </ul>
+       </article>
+     </div>
+     <div class="about-row bottom">
+       <article class="about-card">
+         <img src="image_5.png" alt="" class="art-bg-embedded art-magnolia" aria-hidden="true">
+         <h2>What I enjoy</h2>
+         <ul>
+           <li>Creating things with my hands, from ceramics to digital projects.</li>
+           <li>Visual design, composition, and thoughtful details.</li>
+           <li>Learning new skills through experimentation and curiosity.</li>
+           <li>Turning ideas into something tangible, useful or beautiful.</li>
+           <li>Finding inspiration in both art and technology.</li>
+           <li>Exploring game ideas, worldbuilding and creative storytelling.</li>
+         </ul>
+       </article>
+       <article class="about-card">
+         <h2>Strengths</h2>
+         <ul>
+           <li>Naturally organized and good at bringing structure to chaos.</li>
+           <li>Open communication and supportive teamwork.</li>
+           <li>Comfortable guiding, mentoring and coordinating people.</li>
+           <li>Positive attitude and a good sense of humor.</li>
+           <li>Patient, adaptable and solution-oriented.</li>
+           <li>Discovering new creative hobbies and skills.</li>
+         </ul>
+       </article>
+       <article class="about-card">
+         <img src="image_7.png" alt="" class="art-bg-embedded art-lotus" aria-hidden="true">
+         <h2>Outside QA</h2>
+         <p>
            Outside of QA, I enjoy visual arts, ceramics, design and creative projects. I love creating things from scratch, whether it is a physical object, a visual concept, or a small digital project.
+           Teaching, creativity and curiosity have always been a big part of my life. They shape not only my hobbies, but also the way I approach learning, collaboration, and problem-solving.
+         </p>
+         <div class="mini-tags"><span>Design</span><span>Learning</span><span>Digital craft</span></div>
+       </article>
+     </div>
+   </div>
+ </section>
+ <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+   <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+     <button class="modal-close" type="button" id="modalClose" aria-label="Close details">x</button>
+     <div class="modal-body" id="modalBody"></div>
+   </section>
+ </div>
+ <script>
+   const registryData = {
+     cert1: {
+       title: "Automation QA Course Certificate",
+       subtitle: "Tallinn Learning | 2025",
+       desc: "Сертификат об успешном окончании курса автоматизации тестирования:",
+       isImage: true,
+       details: ["f5c7d789-3093-4a7c-aded-c9f39c34dc88.jpg"]
+     },
+     cert2: {
+       title: "QA Engineer Course Certificate",
+       subtitle: "Tallinn Learning | 2024",
+       desc: "Сертификат, подтверждающий квалификацию QA Engineer:",
+       isImage: true,
+       details: ["876da4cc-3a99-4845-81bf-27e991e53910.jpg"]
+     },
+     exp1: {
+       title: "QA Supervisor & Workflow Coordinator",
+       subtitle: "Tallinn Learning | Sep 2024 - Present",
+       desc: "Coordinated QA internship workflows, documentation processes, and quality assurance activities across multiple live projects.",
+       details: [
+         "Managed QA internship cycles, onboarding and day-to-day coordination of junior testers across production-like project environments.",
+         "Reviewed 500+ bug reports, test cases, checklists, mind maps, wireflows and supporting QA documentation through YouTrack and project tools.",
+         "Mentored students in defect reporting, severity assessment, test design, documentation standards and reproducible bug descriptions.",
+         "Monitored testing progress, validated deliverables and provided structured feedback before project submissions.",
+         "Coordinated communication between mentors, students and project stakeholders to align testing objectives and quality expectations.",
+         "Coordinated QA activities for AI-assisted code generation testing, including validation planning, defect review, documentation oversight and assessment of generated code against project requirements.",
+         "Prepared testing summaries, quality reports and project documentation to support decision-making and release readiness.",
+         "Supported process improvements by identifying documentation gaps, outdated testing artifacts, and workflow inefficiencies."
+       ]
+     },
+     exp2: {
+       title: "Web Quality Specialist & WordPress Administrator",
+       subtitle: "Liven Project | Oct 2024 - Present",
+       desc: "Supporting website quality, content management and user experience improvements for real estate web projects.",
+       details: [
+         "Managed website content, page creation and updates through WordPress CMS.",
+         "Validated responsive layouts, UI consistency and user-facing functionality across devices.",
+         "Identified and reported content, layout and usability issues.",
+         "Built and customized page sections using HTML and CSS.",
+         "Worked with project stakeholders through Asana to track tasks and improvements.",
+         "Reviewed website flows and content presentation from a user experience perspective.",
+         "Performed regression checks after content and layout updates.",
+         "Supported quality assurance activities for production website releases."
+       ]
+     },
+     exp3: {
+       title: "Art & Digital Design Teacher & Mentor",
+       subtitle: "Tallinna Tondiraba Huvikool | 2020 - Present",
+       desc: "Developed strong communication, leadership, and organizational skills through teaching, event coordination and student mentorship.",
+       details: [
+         "Planned and delivered lessons in visual arts, ceramics, graphic design and creative technologies.",
+         "Managed groups of up to 15 students, ensuring engagement, progress tracking and effective classroom coordination.",
+         "Organized educational events, workshops, exhibitions and student presentations.",
+         "Communicated regularly with parents, students and school administration to support learning objectives and resolve issues.",
+         "Prepared educational materials, lesson plans and project-based activities tailored to different age groups.",
+         "Mentored students throughout creative and technical projects, providing guidance and constructive feedback.",
+         "Coordinated schedules, deadlines and group activities while maintaining a structured learning environment.",
+         "Developed strong public speaking, presentation, conflict resolution, and stakeholder communication skills."
+       ]
+     },
+     proj5: {
+       title: "EventPanel Platform QA",
+       subtitle: "QA Mentorship & Core Verification Lead",
+       desc: "Supervisory QA work for platform workflows and release readiness.",
+       details: [
+         "Coordinated testing activities across multiple internship teams.",
+         "Reviewed bug reports, test cases, checklists, mind maps, and final project documentation.",
+         "Mentored junior QA engineers in defect reporting, severity assessment, and testing practices.",
+         "Validated web, mobile, and CLI workflows across multiple environments.",
+         "Tested EventPanel.yaml configuration flows and AI-assisted code generation workflows.",
+         "Participated in release readiness reviews and quality validation processes.",
+         "Provided structured feedback on testing deliverables and documentation quality."
+       ]
+     },
+     proj1: {
+       title: "MultiKey Platform QA",
+       subtitle: "Production Testing Sandbox | Tallinn Learning",
+       desc: "Manual validation and regression coverage for system components and UI flows.",
+       details: [
+         "Performed end-to-end testing of registration, authentication, password recovery and account management flows.",
+         "Validated chat functionality, AI assistant interactions, subscription features, maps and educational content modules.",
+         "Executed localization testing across multiple languages and identified translation and UI inconsistencies.",
+         "Tested application behavior on multiple iOS and Android devices and different operating system versions.",
+         "Reported and documented defects with severity and priority assessment.",
+         "Identified critical issues related to account deletion, authentication workflows, security requirements and platform stability.",
+         "Prepared structured test reports, checklists and validation documentation."
+       ]
+     },
+     proj2: {
+       title: "FinMind Platform QA",
+       subtitle: "Data & State Verification Sandbox | Tallinn Learning",
+       desc: "System evaluation focused on API behavior, data display, and state changes.",
+       details: [
+         "Tested registration, login, password recovery, profile management and user account workflows.",
+         "Validated learning modules, quizzes, progress tracking, reviews, downloadable materials and educational content.",
+         "Performed extensive localization testing across Russian, English and Estonian versions.",
+         "Verified consistency of course content, translations, quizzes and learning progress between language versions.",
+         "Reported issues related to localization, navigation, user experience and content synchronization.",
+         "Participated in exploratory testing of new educational features and learning scenarios."
+       ]
+     },
+     proj3: {
+       title: "Ydalir Ecosystem Testing",
+       subtitle: "Agile Documentation Sandbox | Gratheon",
+       desc: "Documentation-heavy QA work for user journeys and coverage gaps.",
+       details: [
+         "Tested 70+ websites across desktop and mobile environments.",
+         "Performed cross-browser validation on Chrome, Firefox, Edge, Safari and Yandex Browser.",
+         "Verified responsive layouts, navigation flows, links, media rendering and UI consistency.",
+         "Identified mobile adaptation issues, layout defects, broken links and content display problems.",
+         "Investigated JavaScript console errors and frontend rendering issues.",
+         "Created structured bug reports with severity and priority classification.",
+         "Prepared comprehensive testing documentation and final project reports."
+       ]
+     },
+     proj4: {
+       title: "Gratheon Ecosystem QA",
+       subtitle: "Microservice Framework Sandbox | Gratheon",
+       desc: "End-to-end checks for distributed service behavior and release stability.",
+       details: [
+         "Verified component lifecycles across distributed microservices.",
+         "Analyzed data flows and shared environment configurations.",
+         "Collaborated through Miro sprint workflows.",
+         "Maintained documentation and regression stability before main branch integration."
+       ]
+     }
+   };
+   const overlay = document.getElementById("modalOverlay");
+   const modal = overlay.querySelector(".modal-window");
+   const modalBody = document.getElementById("modalBody");
+   const closeButton = document.getElementById("modalClose");
+   const viewButtons = document.querySelectorAll("[data-view-target]");
+   let lastFocusedElement = null;
+  function openModal(id) {
+     const data = registryData[id];
+     if (!data) return;
+     lastFocusedElement = document.activeElement;
+     modalBody.innerHTML = "";
+     const title = document.createElement("h3");
+     title.id = "modalTitle";
+     title.textContent = data.title;
+     const subtitle = document.createElement("div");
+     subtitle.className = "modal-subtitle";
+     subtitle.textContent = data.subtitle;
+     const desc = document.createElement("p");
+     desc.textContent = data.desc;
 
-Teaching, creativity and curiosity have always been a big part of my life. They shape not only my hobbies, but also the way I approach learning, collaboration, and problem-solving.
-          </p>
-          <div class="mini-tags">
-            <span>Design</span>
-            <span>Learning</span>
-            <span>Digital craft</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+     const list = document.createElement("ul");
 
-  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-    <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
-      <button class="modal-close" type="button" id="modalClose" aria-label="Close details">x</button>
-      <div class="modal-body" id="modalBody"></div>
-    </section>
-  </div>
+     // Если это картинка, убираем точки списка для красоты
+     if (data.isImage) {
+       list.style.listStyle = "none";
+       list.style.padding = "0";
+     }
 
-  <script>
-    const registryData = {
-      exp1: {
-        title: "QA Supervisor & Workflow Coordinator",
-subtitle: "Tallinn Learning | Sep 2024 - Present",
-desc: "Coordinated QA internship workflows, documentation processes, and quality assurance activities across multiple live projects.",
-details: [
-"Managed QA internship cycles, onboarding and day-to-day coordination of junior testers across production-like project environments.",
-"Reviewed 500+ bug reports, test cases, checklists, mind maps, wireflows and supporting QA documentation through YouTrack and project tools.",
-"Mentored students in defect reporting, severity assessment, test design, documentation standards and reproducible bug descriptions.",
-"Monitored testing progress, validated deliverables and provided structured feedback before project submissions.",
-"Coordinated communication between mentors, students and project stakeholders to align testing objectives and quality expectations.",
-"Coordinated QA activities for AI-assisted code generation testing, including validation planning, defect review, documentation oversight and assessment of generated code against project requirements.",
-"Prepared testing summaries, quality reports and project documentation to support decision-making and release readiness.",
-"Supported process improvements by identifying documentation gaps, outdated testing artifacts, and workflow inefficiencies."
-        ]
-      },
-      exp2: {
-        title: "Web Quality Specialist & WordPress Administrator",
-subtitle: "Liven Project | Oct 2024 - Present",
-desc: "Supporting website quality, content management and user experience improvements for real estate web projects.",
-details: [
-"Managed website content, page creation and updates through WordPress CMS.",
-    "Validated responsive layouts, UI consistency and user-facing functionality across devices.",
-    "Identified and reported content, layout and usability issues.",
-    "Built and customized page sections using HTML and CSS.",
-    "Worked with project stakeholders through Asana to track tasks and improvements.",
-    "Reviewed website flows and content presentation from a user experience perspective.",
-    "Performed regression checks after content and layout updates.",
-    "Supported quality assurance activities for production website releases."
-        ]
-      },
-      exp3: {
-        title: "Teacher & Mentor",
-        subtitle: "Tallinna Tondiraba Huvikool | 2020 - Present",
-        desc: "Developed strong communication, leadership, and organizational skills through teaching, event coordination and student mentorship.",
-        details: [
-          "Planned and delivered lessons in visual arts, ceramics, graphic design and creative technologies.",
-"Managed groups of up to 15 students, ensuring engagement, progress tracking and effective classroom coordination.",
-"Organized educational events, workshops, exhibitions and student presentations.",
-"Communicated regularly with parents, students and school administration to support learning objectives and resolve issues.",
-"Prepared educational materials, lesson plans and project-based activities tailored to different age groups.",
-"Mentored students throughout creative and technical projects, providing guidance and constructive feedback.",
-"Coordinated schedules, deadlines and group activities while maintaining a structured learning environment.",
-"Developed strong public speaking, presentation, conflict resolution, and stakeholder communication skills."
-        ]
-      },
-      proj5: {
-        title: "EventPanel Platform QA",
-        subtitle: "QA Mentorship & Core Verification Lead",
-        desc: "Supervisory QA work for platform workflows and release readiness.",
-        details: [
-          "Coordinated testing activities across multiple internship teams.",
-    "Reviewed bug reports, test cases, checklists, mind maps, and final project documentation.",
-    "Mentored junior QA engineers in defect reporting, severity assessment, and testing practices.",
-    "Validated web, mobile, and CLI workflows across multiple environments.",
-    "Tested EventPanel.yaml configuration flows and AI-assisted code generation workflows.",
-    "Participated in release readiness reviews and quality validation processes.",
-    "Provided structured feedback on testing deliverables and documentation quality."
-        ]
-      },
-      proj1: {
-        title: "MultiKey Platform QA",
-        subtitle: "Production Testing Sandbox | Tallinn Learning",
-        desc: "Manual validation and regression coverage for system components and UI flows.",
-        details: [
-          "Performed end-to-end testing of registration, authentication, password recovery and account management flows.",
-    "Validated chat functionality, AI assistant interactions, subscription features, maps and educational content modules.",
-    "Executed localization testing across multiple languages and identified translation and UI inconsistencies.",
-    "Tested application behavior on multiple iOS and Android devices and different operating system versions.",
-    "Reported and documented defects with severity and priority assessment.",
-    "Identified critical issues related to account deletion, authentication workflows, security requirements and platform stability.",
-    "Prepared structured test reports, checklists and validation documentation."
-        ]
-      },
-      proj2: {
-        title: "FinMind Platform QA",
-        subtitle: "Data & State Verification Sandbox | Tallinn Learning",
-        desc: "System evaluation focused on API behavior, data display, and state changes.",
-        details: [
-          "Tested registration, login, password recovery, profile management and user account workflows.",
-"Validated learning modules, quizzes, progress tracking, reviews, downloadable materials and educational content.",
-"Performed extensive localization testing across Russian, English and Estonian versions.",
-"Verified consistency of course content, translations, quizzes and learning progress between language versions.",
-"Reported issues related to localization, navigation, user experience and content synchronization.",
-"Participated in exploratory testing of new educational features and learning scenarios."
-        ]
-      },
-      proj3: {
-        title: "Ydalir Ecosystem Testing",
-        subtitle: "Agile Documentation Sandbox | Gratheon",
-        desc: "Documentation-heavy QA work for user journeys and coverage gaps.",
-        details: [
-          "Tested 70+ websites across desktop and mobile environments.",
-    "Performed cross-browser validation on Chrome, Firefox, Edge, Safari and Yandex Browser.",
-    "Verified responsive layouts, navigation flows, links, media rendering and UI consistency.",
-    "Identified mobile adaptation issues, layout defects, broken links and content display problems.",
-    "Investigated JavaScript console errors and frontend rendering issues.",
-    "Created structured bug reports with severity and priority classification.",
-    "Prepared comprehensive testing documentation and final project reports."
-        ]
-      },
-      proj4: {
-        title: "Gratheon Ecosystem QA",
-        subtitle: "Microservice Framework Sandbox | Gratheon",
-        desc: "End-to-end checks for distributed service behavior and release stability.",
-        details: [
-          "Verified component lifecycles across distributed microservices.",
-          "Analyzed data flows and shared environment configurations.",
-          "Collaborated through Miro sprint workflows.",
-          "Maintained documentation and regression stability before main branch integration."
-        ]
-      }
-    };
+     data.details.forEach((item) => {
+       const li = document.createElement("li");
+       if (data.isImage) {
+         // Создаем тег картинки, задаем ему адаптивную ширину и скругление углов
+         const img = document.createElement("img");
+         img.src = item;
+         img.alt = data.title;
+         img.style.width = "100%";
+         img.style.maxHeight = "70svh"; // чтобы картинка не вылезала за пределы экрана по высоте
+         img.style.objectFit = "contain";
+         img.style.borderRadius = "12px";
+         img.style.marginTop = "10px";
+         li.appendChild(img);
+       } else {
+         li.textContent = item;
+       }
+       list.appendChild(li);
+     });
 
-    const overlay = document.getElementById("modalOverlay");
-    const modal = overlay.querySelector(".modal-window");
-    const modalBody = document.getElementById("modalBody");
-    const closeButton = document.getElementById("modalClose");
-    const viewButtons = document.querySelectorAll("[data-view-target]");
-    let lastFocusedElement = null;
-
-    function openModal(id) {
-      const data = registryData[id];
-      if (!data) return;
-
-      lastFocusedElement = document.activeElement;
-      modalBody.innerHTML = "";
-
-      const title = document.createElement("h3");
-      title.id = "modalTitle";
-      title.textContent = data.title;
-
-      const subtitle = document.createElement("div");
-      subtitle.className = "modal-subtitle";
-      subtitle.textContent = data.subtitle;
-
-      const desc = document.createElement("p");
-      desc.textContent = data.desc;
-
-      const list = document.createElement("ul");
-      data.details.forEach((item) => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        list.appendChild(li);
-      });
-
-      modalBody.append(title, subtitle, desc, list);
-      overlay.classList.add("active");
-      overlay.setAttribute("aria-hidden", "false");
-      modal.focus();
-    }
-
-    function closeModal() {
-      overlay.classList.remove("active");
-      overlay.setAttribute("aria-hidden", "true");
-      if (lastFocusedElement) lastFocusedElement.focus();
-    }
-
-    document.querySelectorAll("[data-modal]").forEach((button) => {
-      button.addEventListener("click", () => openModal(button.dataset.modal));
-    });
-
-    viewButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const target = button.dataset.viewTarget;
-        document.body.dataset.view = target;
-        const focusTarget = target === "about"
-          ? document.querySelector(".about-dashboard .back-button")
-          : document.querySelector("[data-view-target='about']");
-        if (focusTarget) focusTarget.focus();
-      });
-    });
-
-    closeButton.addEventListener("click", closeModal);
-    overlay.addEventListener("click", (event) => {
-      if (event.target === overlay) closeModal();
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && overlay.classList.contains("active")) {
-        closeModal();
-      }
-    });
-  </script>
+     modalBody.append(title, subtitle, desc, list);
+     overlay.classList.add("active");
+     overlay.setAttribute("aria-hidden", "false");
+     modal.focus();
+   }
+   function closeModal() {
+     overlay.classList.remove("active");
+     overlay.setAttribute("aria-hidden", "true");
+     if (lastFocusedElement) lastFocusedElement.focus();
+   }
+   document.querySelectorAll("[data-modal]").forEach((button) => {
+     button.addEventListener("click", () => openModal(button.dataset.modal));
+   });
+   viewButtons.forEach((button) => {
+     button.addEventListener("click", () => {
+       const target = button.dataset.viewTarget;
+       document.body.dataset.view = target;
+       const focusTarget = target === "about"
+         ? document.querySelector(".about-dashboard .back-button")
+         : document.querySelector("[data-view-target='about']");
+       if (focusTarget) focusTarget.focus();
+     });
+   });
+   closeButton.addEventListener("click", closeModal);
+   overlay.addEventListener("click", (event) => {
+     if (event.target === overlay) closeModal();
+   });
+   document.addEventListener("keydown", (event) => {
+     if (event.key === "Escape" && overlay.classList.contains("active")) {
+       closeModal();
+     }
+   });
+ </script>
 </body>
 </html>
