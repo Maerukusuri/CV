@@ -19,10 +19,10 @@
       --border-color: rgba(184, 121, 94, 0.08);
       --card-bg: rgba(255, 255, 255, 0.34);
       --card-hover: rgba(255, 255, 255, 0.52);
-      --accent: #b8795e;
-      --accent-soft: rgba(232, 181, 142, 0.14);
-      --accent-blue: rgba(125, 211, 252, 0.24);
-      --accent-mint: rgba(187, 247, 208, 0.16);
+      --accent: #8b5cf6;
+      --accent-soft: rgba(244, 63, 94, 0.12);
+      --accent-blue: rgba(14, 165, 233, 0.15);
+      --accent-mint: rgba(139, 92, 246, 0.1);
       --shadow: 0 18px 60px rgba(42, 31, 24, 0.055);
       --modal-overlay: rgba(247, 243, 238, 0.14);
       --font-display: "Cormorant Garamond", Georgia, serif;
@@ -33,17 +33,17 @@
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
-        --bg-main: #08080a;
+        --bg-main: #0d0e15;
         --bg-side: rgba(22, 21, 25, 0.62);
         --text-main: #f6f0e9;
         --text-muted: #e5ddd6;
         --border-color: rgba(246, 240, 233, 0.08);
         --card-bg: rgba(28, 27, 32, 0.46);
         --card-hover: rgba(38, 36, 43, 0.6);
-        --accent: #f0ad88;
-        --accent-soft: rgba(240, 173, 136, 0.18);
-        --accent-blue: rgba(56, 189, 248, 0.15);
-        --accent-mint: rgba(74, 222, 128, 0.09);
+        --accent: #f43f5e;
+        --accent-soft: rgba(244, 63, 94, 0.16);
+        --accent-blue: rgba(14, 165, 233, 0.16);
+        --accent-mint: rgba(139, 92, 246, 0.14);
         --shadow: 0 22px 65px rgba(0, 0, 0, 0.22);
         --modal-overlay: rgba(8, 8, 10, 0.18);
       }
@@ -60,9 +60,9 @@
       width: 100%;
       height: 100%;
       background:
-        radial-gradient(circle at 44% 32%, var(--accent-blue), transparent 32%),
-        radial-gradient(circle at 68% 65%, var(--accent-mint), transparent 34%),
-        radial-gradient(circle at 88% 8%, var(--accent-soft), transparent 28%),
+        radial-gradient(circle at 20% 30%, var(--accent-blue), transparent 35%),
+        radial-gradient(circle at 75% 65%, var(--accent-mint), transparent 35%),
+        radial-gradient(circle at 85% 15%, var(--accent-soft), transparent 30%),
         var(--bg-main);
       color: var(--text-main);
       font-family: var(--font-body);
@@ -88,7 +88,7 @@
       height: 48vw;
       right: 18vw;
       top: -18vw;
-      background: rgba(125, 211, 252, 0.14);
+      background: rgba(139, 92, 246, 0.12);
     }
 
     body::after {
@@ -96,7 +96,7 @@
       height: 52vw;
       left: 38vw;
       bottom: -24vw;
-      background: rgba(187, 247, 208, 0.12);
+      background: rgba(244, 63, 94, 0.1);
       animation-delay: -6s;
     }
 
@@ -150,7 +150,7 @@
       height: 340px;
       left: -110px;
       top: 12vh;
-      background: rgba(125, 211, 252, 0.16);
+      background: rgba(14, 165, 233, 0.14);
     }
 
     .glow-blob-2 {
@@ -158,7 +158,7 @@
       height: 420px;
       right: -120px;
       bottom: 5vh;
-      background: rgba(232, 181, 142, 0.12);
+      background: rgba(244, 63, 94, 0.12);
       animation-delay: -4s;
     }
 
@@ -377,14 +377,14 @@
   top: -130px;
 
   border-radius: 50%;
-  border: 1px solid rgba(240,173,136,0.08);
+  border: 1px solid rgba(244,63,94,0.06);
 
   box-shadow:
-    0 0 0 30px rgba(240,173,136,0.05),
-    0 0 0 60px rgba(240,173,136,0.04),
-    0 0 0 90px rgba(240,173,136,0.03),
-    0 0 0 120px rgba(240,173,136,0.02),
-    0 0 0 150px rgba(240,173,136,0.015);
+    0 0 0 30px rgba(244,63,94,0.04),
+    0 0 0 60px rgba(244,63,94,0.03),
+    0 0 0 90px rgba(244,63,94,0.025),
+    0 0 0 120px rgba(244,63,94,0.02),
+    0 0 0 150px rgba(244,63,94,0.015);
 }
 
     .summary-card p {
@@ -484,14 +484,14 @@
   top: -120px;
 
   border-radius: 50%;
-  border: 1px solid rgba(240,173,136,0.05);
+  border: 1px solid rgba(139,92,246,0.05);
 
   box-shadow:
-    0 0 0 30px rgba(240,173,136,0.04),
-    0 0 0 60px rgba(240,173,136,0.03),
-    0 0 0 90px rgba(240,173,136,0.025),
-    0 0 0 120px rgba(240,173,136,0.02),
-    0 0 0 150px rgba(240,173,136,0.015);
+    0 0 0 30px rgba(139,92,246,0.04),
+    0 0 0 60px rgba(139,92,246,0.03),
+    0 0 0 90px rgba(139,92,246,0.025),
+    0 0 0 120px rgba(139,92,246,0.02),
+    0 0 0 150px rgba(139,92,246,0.015);
 
   pointer-events: none;
 }
