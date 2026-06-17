@@ -42,13 +42,13 @@
        --text-main: #f6f0e9;
        --text-muted: #e5ddd6;
        --border-color: rgba(246, 240, 233, 0.08);
-       --card-bg: rgba(28, 27, 32, 0.46);
+       --card-bg: rgba(20, 20, 28, 0.88);
        --card-hover: rgba(38, 36, 43, 0.6);
        --accent: #f43f5e;
        --accent-soft: rgba(244, 63, 94, 0.16);
        --accent-blue: rgba(14, 165, 233, 0.15);
        --accent-mint: rgba(139, 92, 246, 0.16);
-       --shadow: 0 22px 65px rgba(0, 0, 0, 0.22);
+       --shadow: none;
        --modal-overlay: rgba(8, 8, 10, 0.18);
        --art-blend: screen;
        --art-opacity: 0.08;
@@ -232,7 +232,7 @@
    }
    .job-title {
      color: var(--text-muted);
-     font-size: 0.8rem;
+     font-size: 0.9rem;
      font-weight: 800;
      letter-spacing: 0.13em;
      line-height: 1.45;
@@ -299,6 +299,17 @@
      font-weight: 750;
      line-height: 1.2;
      transition: var(--transition);
+     cursor: default;
+}
+button.tag {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button.tag:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
    }
    .tag-lang { color: #2c7c96; }
    .tag-tool { color: #a34a76; }
@@ -346,12 +357,11 @@
        0 0 0 150px rgba(in srgb, var(--accent) 1%, transparent);
    }
    .summary-card p {
-     max-width: 920px;
-     color: var(--text-muted);
-     font-size: clamp(0.84rem, 1vw, 1rem);
-     font-weight: 500;
-     line-height: 1.52;
-   }
+    color: var(--text-muted);
+    font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+    font-weight: 500;
+    line-height: 1.52;
+}
    .summary-copy {
      position: relative;
      z-index: 1;
@@ -456,10 +466,10 @@
   width: clamp(180px, 16vw, 220px);
   height: clamp(180px, 16vw, 220px);
   margin: 45px auto 24px auto;
-  border-radius: 50% !important; 
+  border-radius: 50% !important;
   border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
   background: color-mix(in srgb, var(--text-muted) 15%, transparent);
-  overflow: hidden !important;  
+  overflow: hidden !important;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -472,7 +482,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%; 
+  object-position: center 20%;
 }
    .about-lead {
      max-width: 330px;
@@ -643,7 +653,22 @@
     gap:14px;
     width:100%;
 }
+.final-layout-fix{
+    display:flex;
+    gap:16px;
+    align-items:stretch;
+    width:100%;
+}
 
+.final-edu{
+    flex:1;
+    min-width:0;
+}
+
+.final-lang{
+    width:300px;
+    flex-shrink:0;
+}
 .final-edu{
     flex:1;
     min-width:0;
@@ -907,6 +932,11 @@
      font-size: 1rem;
      line-height: 1.5;
    }
+   .modal-body .tag {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 14px;
+}
    @media (max-width: 1250px), (max-height: 760px) {
      .portfolio-dashboard {
        grid-template-columns: 300px minmax(0, 1fr);
@@ -1028,27 +1058,15 @@
        bottom: -20px;
      }
      .final-layout-fix {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  gap: 60px; 
-  margin-top: 24px;
-}
-.final-row{
-    display:flex;
-    gap:16px;
-    align-items:stretch;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.final-edu{
-    flex:4;
+.final-edu,
+.final-lang {
+    width: 100%;
+    min-width: 0;
 }
-
-.final-lang{
-    flex:1.4;
-    min-width:260px;
 }
 .edu-header{
     display:flex;
@@ -1150,9 +1168,7 @@
          <span class="tag tag-spec">WordPress CMS</span>
          <span class="tag tag-tool">YouTrack</span>
          <span class="tag tag-tool">Miro</span>
-         <span class="tag tag-tool">Asana</span>
-        <span class="tag tag-tool">Agile</span>
-        <span class="tag tag-tool">Scrum</span>
+         <button class="tag tag-tool" type="button" data-modal="hardSkillsMore">+8</button>
        </div>
      </section>
      <section class="side-section" aria-labelledby="soft-skills-title">
@@ -1166,6 +1182,7 @@
          <span class="tag tag-soft">Agile Collaboration</span>
          <span class="tag tag-soft">Time management</span>
          <span class="tag tag-soft">Quick learner</span>
+         <button class="tag tag-soft" type="button" data-modal="softSkillsMore">+5</button>
        </div>
      </section>
    </aside>
@@ -1174,10 +1191,7 @@
        <div class="summary-copy">
          <h2 id="summary-title">Profile Summary</h2>
          <p>
-           QA Engineer and Internship Supervisor with hands-on experience in manual testing,
-           QA documentation, WordPress administration, UI validation, and cross-functional collaboration.
-           Experienced in coordinating QA workflows, reviewing test artifacts, mentoring junior testers,
-           supporting production web projects, and validating API and database-related functionality.
+           QA Engineer with hands-on experience testing real client projects and supporting a commercial real estate platform. Experienced in functional, regression, smoke, usability, API and database testing, test documentation, bug reporting and requirements analysis. Skilled in working with web applications, staging environments and CMS platforms. Currently expanding automation testing skills with Playwright and TypeScript. Strong attention to detail, user-focused mindset and mentoring experience gained through supporting QA internship programs and trainee teams.
          </p>
          <p class="ats-only">
            Keywords: manual QA, automated testing basics, Playwright, TypeScript, Python, API testing,
@@ -1194,37 +1208,41 @@
   <h2 id="experience-title">Professional Experience</h2>
   <div class="experience-grid">
 
+<button class="clickable-tab" type="button" data-modal="exp2">
+  <div class="tab-title" style="display:flex;align-items:baseline;justify-content:flex-start;gap:8px;">
+    <span style="font-weight:bold;font-size:1.1rem;flex-shrink:0;">Web Quality Specialist </span>
+    <time style="font-size:0.95rem;font-weight:700;color:var(--text-muted);flex-shrink:0;">2024 - Pres.</time>
+  </div>
 
-    <button class="clickable-tab" type="button" data-modal="exp1">
-      <div class="tab-title" style="display: flex; align-items: baseline; justify-content: flex-start; gap: 8px;">
-        <span style="font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">QA Supervisor</span>
-        <time style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); flex-shrink: 0;">2024 - Pres.</time>
-        <span style="display: none !important;"></span>
-      </div>
-      <div class="company-info" style="margin-top: 4px; text-align: left;">Tallinn Learning | Internship Management</div>
-      <ul class="bullet-list" style="text-align: left;">
-        <li>Coordinated QA internship workflows across multiple live projects.</li>
-        <li>Reviewed 500+ defect reports, test cases, and testing artifacts via YouTrack.</li>
-        <li>Mentored junior testers in bug reporting, documentation, and testing practices.</li>
-        <li>Managed communication with stakeholders and supervised QA deliverables.</li>
-      </ul>
-    </button>
+  <div class="company-info" style="margin-top:4px;text-align:left;">
+    Mynted / Liven Real Estate Platform
+  </div>
 
+  <ul class="bullet-list" style="text-align:left;">
+    <li>Tested website updates and new functionality before release.</li>
+    <li>Performed functional, usability and content validation.</li>
+    <li>Managed website content using WordPress and Home Designer.</li>
+    <li>Identified UI issues and improved content quality.</li>
+  </ul>
+</button>
 
-    <button class="clickable-tab" type="button" data-modal="exp2">
-      <div class="tab-title" style="display: flex; align-items: baseline; justify-content: flex-start; gap: 8px;">
-        <span style="font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">Web Quality Spec.</span>
-        <time style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); flex-shrink: 0;">2024 - Pres.</time>
-        <span style="display: none !important;"></span>
-      </div>
-      <div class="company-info" style="margin-top: 4px; text-align: left;">Liven Project / Mynted | UI/UX</div>
-      <ul class="bullet-list" style="text-align: left;">
-        <li>Maintained and updated website content through WordPress CMS.</li>
-        <li>Performed UI validation, usability reviews and bug identification.</li>
-        <li>Created and customized page layouts using HTML/CSS components.</li>
-      </ul>
-    </button>
+<button class="clickable-tab" type="button" data-modal="exp1">
+  <div class="tab-title" style="display:flex;align-items:baseline;justify-content:flex-start;gap:8px;">
+    <span style="font-weight:bold;font-size:1.1rem;flex-shrink:0;">QA Internship Supervisor</span>
+    <time style="font-size:0.95rem;font-weight:700;color:var(--text-muted);flex-shrink:0;">2024 - Pres.</time>
+  </div>
 
+  <div class="company-info" style="margin-top:4px;text-align:left;">
+    Tallinn Learning
+  </div>
+
+  <ul class="bullet-list" style="text-align:left;">
+    <li>Mentored QA trainees across multiple client projects.</li>
+    <li>Reviewed 500+ bug reports, test cases and QA artifacts.</li>
+    <li>Coordinated communication between interns and stakeholders.</li>
+    <li>Supported testing documentation and project delivery.</li>
+  </ul>
+</button>
     <button class="clickable-tab" type="button" data-modal="exp3">
       <div class="tab-title" style="display: flex; align-items: baseline; justify-content: flex-start; gap: 8px;">
         <span style="font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">Art & Digital Design Teacher</span>
@@ -1429,7 +1447,7 @@
      exp2: {
        title: "Web Quality Specialist & WordPress Administrator",
        subtitle: "Liven Project | Oct 2024 - Present",
-       desc: "Supporting website quality, content management and user experience improvements for real estate web projects.",
+       desc: "Supported quality assurance and website content management activities for a commercial real estate platform.",
        details: [
          "Managed website content, page creation and updates through WordPress CMS.",
          "Validated responsive layouts, UI consistency and user-facing functionality across devices.",
@@ -1453,7 +1471,7 @@
          "Prepared educational materials, lesson plans and project-based activities tailored to different age groups.",
          "Mentored students throughout creative and technical projects, providing guidance and constructive feedback.",
          "Coordinated schedules, deadlines and group activities while maintaining a structured learning environment.",
-         "Developed strong public speaking, presentation, conflict resolution, and stakeholder communication skills."
+         "Developed strong communication, mentoring, presentation and stakeholder management skills."
        ]
      },
      proj5: {
@@ -1521,7 +1539,56 @@
          "Collaborated through Miro sprint workflows.",
          "Maintained documentation and regression stability before main branch integration."
        ]
-     }
+     },
+     hardSkillsMore: {
+title: "Additional Technical Skills",
+subtitle: "Additional QA & Technical Skills",
+desc: "Extended list of tools, methodologies and testing practices.",
+details: [
+"Functional Testing",
+"Regression Testing",
+"Smoke Testing",
+"Usability Testing",
+"UI Testing",
+"Database Testing",
+"Test Cases",
+"Checklists",
+"Bug Reports",
+"Test Reports",
+"Requirements Analysis",
+"Wireflows",
+"Mind Maps",
+"Page Object Model (POM)",
+"GitHub",
+"Asana",
+"DevTools",
+"Home Designer",
+"GeoJSON",
+"Geospatial Data Validation",
+"Coordinate Systems",
+"Staging Environment Testing",
+"Release Validation",
+"Agile",
+"Scrum",
+"SDLC"
+]
+},
+
+softSkillsMore: {
+title: "Additional Soft Skills",
+subtitle: "Communication & Teamwork",
+desc: "Interpersonal, leadership and collaboration skills.",
+details: [
+"Cross-functional Collaboration",
+"Stakeholder Management",
+"Mentoring & Coaching",
+"Clear Communication",
+"Problem Solving",
+"Attention to Detail",
+"Time Management",
+"Adaptability"
+]
+}
    };
    const overlay = document.getElementById("modalOverlay");
    const modal = overlay.querySelector(".modal-window");
@@ -1543,30 +1610,50 @@
      const desc = document.createElement("p");
      desc.textContent = data.desc;
 
-     const list = document.createElement("ul");
-     if (data.isImage) {
-       list.style.listStyle = "none";
-       list.style.padding = "0";
-     }
+   let list;
 
-     data.details.forEach((item) => {
-       const li = document.createElement("li");
-       if (data.isImage) {
-         const img = document.createElement("img");
-         img.src = item;
-         img.alt = data.title;
-         img.style.width = "100%";
-         img.style.maxHeight = "70svh"; 
-         img.style.objectFit = "contain";
-         img.style.borderRadius = "12px";
-         img.style.marginTop = "10px";
-         li.appendChild(img);
-       } else {
-         li.textContent = item;
-       }
-       list.appendChild(li);
-     });
+if (id === "hardSkillsMore" || id === "softSkillsMore") {
 
+list = document.createElement("div");
+list.className = "skills-container";
+
+data.details.forEach((item) => {
+    const tag = document.createElement("span");
+
+    tag.className =
+        id === "softSkillsMore"
+            ? "tag tag-soft"
+            : "tag tag-spec";
+
+    tag.textContent = item;
+    list.appendChild(tag);
+});
+
+} else {
+
+list = document.createElement("ul");
+
+data.details.forEach((item) => {
+    const li = document.createElement("li");
+
+    if (data.isImage) {
+        const img = document.createElement("img");
+        img.src = item;
+        img.alt = data.title;
+        img.style.width = "100%";
+        img.style.maxHeight = "70svh";
+        img.style.objectFit = "contain";
+        img.style.borderRadius = "12px";
+        img.style.marginTop = "10px";
+
+        li.appendChild(img);
+    } else {
+        li.textContent = item;
+    }
+
+    list.appendChild(li);
+});
+}
      modalBody.append(title, subtitle, desc, list);
      overlay.classList.add("active");
      overlay.setAttribute("aria-hidden", "false");
