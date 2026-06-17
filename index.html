@@ -19,10 +19,10 @@
       --border-color: rgba(184, 121, 94, 0.08);
       --card-bg: rgba(255, 255, 255, 0.34);
       --card-hover: rgba(255, 255, 255, 0.52);
-      --accent: #8b5cf6;
-      --accent-soft: rgba(244, 63, 94, 0.12);
-      --accent-blue: rgba(14, 165, 233, 0.15);
-      --accent-mint: rgba(139, 92, 246, 0.1);
+      --accent: #d946ef;
+      --accent-soft: rgba(217, 70, 239, 0.1);
+      --accent-blue: rgba(14, 165, 233, 0.12);
+      --accent-mint: rgba(168, 85, 247, 0.08);
       --shadow: 0 18px 60px rgba(42, 31, 24, 0.055);
       --modal-overlay: rgba(247, 243, 238, 0.14);
       --font-display: "Cormorant Garamond", Georgia, serif;
@@ -42,8 +42,8 @@
         --card-hover: rgba(38, 36, 43, 0.6);
         --accent: #f43f5e;
         --accent-soft: rgba(244, 63, 94, 0.16);
-        --accent-blue: rgba(14, 165, 233, 0.16);
-        --accent-mint: rgba(139, 92, 246, 0.14);
+        --accent-blue: rgba(14, 165, 233, 0.15);
+        --accent-mint: rgba(139, 92, 246, 0.16);
         --shadow: 0 22px 65px rgba(0, 0, 0, 0.22);
         --modal-overlay: rgba(8, 8, 10, 0.18);
       }
@@ -229,16 +229,16 @@
       height: 54px;
       display: grid;
       place-items: center;
-      border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
       border-radius: 999px;
       color: var(--accent);
       font-family: var(--font-display);
       font-size: 1.25rem;
       font-weight: 700;
-      background: rgba(255, 255, 255, 0.12);
+      background: color-mix(in srgb, var(--accent) 6%, transparent);
     }
 
-    .profile-block {
+    . profile-block {
         min-height: auto;
   padding: 8px 30px 0 0;
     }
@@ -377,14 +377,14 @@
   top: -130px;
 
   border-radius: 50%;
-  border: 1px solid rgba(244,63,94,0.06);
+  border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
 
   box-shadow:
-    0 0 0 30px rgba(244,63,94,0.04),
-    0 0 0 60px rgba(244,63,94,0.03),
-    0 0 0 90px rgba(244,63,94,0.025),
-    0 0 0 120px rgba(244,63,94,0.02),
-    0 0 0 150px rgba(244,63,94,0.015);
+    0 0 0 30px rgba(in srgb, var(--accent) 8%, transparent),
+    0 0 0 60px rgba(in srgb, var(--accent) 6%, transparent),
+    0 0 0 90px rgba(in srgb, var(--accent) 4%, transparent),
+    0 0 0 120px rgba(in srgb, var(--accent) 2%, transparent),
+    0 0 0 150px rgba(in srgb, var(--accent) 1%, transparent);
 }
 
     .summary-card p {
@@ -484,14 +484,14 @@
   top: -120px;
 
   border-radius: 50%;
-  border: 1px solid rgba(139,92,246,0.05);
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
 
   box-shadow:
-    0 0 0 30px rgba(139,92,246,0.04),
-    0 0 0 60px rgba(139,92,246,0.03),
-    0 0 0 90px rgba(139,92,246,0.025),
-    0 0 0 120px rgba(139,92,246,0.02),
-    0 0 0 150px rgba(139,92,246,0.015);
+    0 0 0 30px rgba(in srgb, var(--accent) 7%, transparent),
+    0 0 0 60px rgba(in srgb, var(--accent) 5%, transparent),
+    0 0 0 90px rgba(in srgb, var(--accent) 3%, transparent),
+    0 0 0 120px rgba(in srgb, var(--accent) 2%, transparent),
+    0 0 0 150px rgba(in srgb, var(--accent) 1%, transparent);
 
   pointer-events: none;
 }
