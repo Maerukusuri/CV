@@ -426,7 +426,6 @@
      padding: 24px;
    }
 
-   /* Стилизация интеграции рисунков (Инверсия + Тонирование в нежно-розовый) */
    .art-bg-embedded {
      position: absolute;
      pointer-events: none;
@@ -437,7 +436,6 @@
      user-select: none;
    }
 
-   /* Применение image_6.png (Пион) в левую панель About Me */
    .about-panel .art-peony {
      bottom: -40px;
      right: -30px;
@@ -460,10 +458,10 @@
   width: clamp(180px, 16vw, 220px);
   height: clamp(180px, 16vw, 220px);
   margin: 45px auto 24px auto;
-  border-radius: 50% !important; /* Жестко делает контейнер круглым */
+  border-radius: 50% !important; 
   border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
   background: color-mix(in srgb, var(--text-muted) 15%, transparent);
-  overflow: hidden !important;   /* Прячет углы фото, чтобы оно не вылезало наружу */
+  overflow: hidden !important;  
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -476,7 +474,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%; /* Приподнимает фото, чтобы лицо было ровно по центру */
+  object-position: center 20%; 
 }
    .about-lead {
      max-width: 330px;
@@ -509,7 +507,6 @@
      min-height: 0;
    }
 
-   /* Общий фоновый штрих image_4.png (Роза) для всей правой секции */
    .about-main .art-rose-backdrop {
      position: absolute;
      top: 15%;
@@ -546,7 +543,6 @@
      z-index: 2;
    }
 
-   /* Применение image_5.png (Магнолия) в карточку What I enjoy */
    .about-card .art-magnolia {
      bottom: -50px;
      right: -40px;
@@ -554,7 +550,6 @@
      transform: rotate(15deg);
    }
 
-   /* Применение image_7.png (Лотос) в карточку Outside QA */
    .about-card .art-lotus {
      bottom: -30px;
      right: -20px;
@@ -968,7 +963,7 @@
      .clickable-tab {
        padding: 12px;
      }
-     /* Ограничиваем интенсивность графики на мелких экранах */
+
      .art-bg-embedded {
        opacity: calc(var(--art-opacity) * 0.7);
      }
@@ -1040,7 +1035,7 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  gap: 60px; /* Увеличили расстояние между блоками */
+  gap: 60px; 
   margin-top: 24px;
 }
 .final-row{
@@ -1092,12 +1087,6 @@
     color: var(--text-muted);
     margin-top: 4px;
 }
-   Для того чтобы даты в Professional Experience выравнивались влево, а кнопки «MORE» в Projects были компактными и смещенными вправо, нам нужно применить flex-верстку к заголовкам каждой карточки.
-
-Ниже приведен готовый код. Вам нужно найти в вашем index.html блоки clickable-tab и заменить их содержимое на предложенное.
-
-1. Добавьте в <style> (чтобы задать отступы):
-CSS
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -1236,7 +1225,6 @@ CSS
       </ul>
     </button>
 
-    <!-- Art & Digital Design Teacher -->
     <button class="clickable-tab" type="button" data-modal="exp3">
       <div class="tab-title" style="display: flex; align-items: baseline; justify-content: flex-start; gap: 8px;">
         <span style="font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">Art & Digital Design Teacher</span>
@@ -1301,7 +1289,6 @@ CSS
         <span style="display:block; margin-top:4px; font-size:0.82rem; color:var(--text-muted);">Tallinn Learning | Feb - Jun 2024</span>
     </div>
 
-            <!-- Курс 3 (без ссылки) -->
             <div class="education-item">
                 <strong style="font-size:0.95rem;">EKA Bachelor Degree</strong>
                 <span style="display:block; margin-top:4px; font-size:0.82rem; color:var(--text-muted);">Estonian Academy of Arts | 2017 - 2020</span>
@@ -1310,11 +1297,10 @@ CSS
         </div>
     </div>
 
-    <!-- Секция Languages -->
     <div class="languages-wrapper final-lang">
         <h2>Languages</h2>
         <div class="meta-text">
-            Russian (C2) · Estonian (C1) · English (B2)
+           English (B2-C1) · Estonian (C1) · Russian (Native)
         </div>
     </div>
 </div>
@@ -1559,8 +1545,6 @@ CSS
      desc.textContent = data.desc;
 
      const list = document.createElement("ul");
-
-     // Если это картинка, убираем точки списка для красоты
      if (data.isImage) {
        list.style.listStyle = "none";
        list.style.padding = "0";
@@ -1569,12 +1553,11 @@ CSS
      data.details.forEach((item) => {
        const li = document.createElement("li");
        if (data.isImage) {
-         // Создаем тег картинки, задаем ему адаптивную ширину и скругление углов
          const img = document.createElement("img");
          img.src = item;
          img.alt = data.title;
          img.style.width = "100%";
-         img.style.maxHeight = "70svh"; // чтобы картинка не вылезала за пределы экрана по высоте
+         img.style.maxHeight = "70svh"; 
          img.style.objectFit = "contain";
          img.style.borderRadius = "12px";
          img.style.marginTop = "10px";
