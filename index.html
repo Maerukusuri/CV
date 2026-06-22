@@ -1418,7 +1418,7 @@ button.tag:hover {
      <div class="modal-body" id="modalBody"></div>
    </section>
  </div>
- <script>
+<script>
    const registryData = {
      cert1: {
        title: "Automation QA Course Certificate",
@@ -1461,21 +1461,19 @@ button.tag:hover {
        ]
      },
      exp3: {
-    title: "Art, Ceramics & Digital Design Teacher & Mentor",
-    subtitle: "Tallinna Tondiraba Huvikool | 2020 - Present",
-    desc: "Dedicated art teacher and mentor with a proven track record of inspiring students, building deep trust with families, and maintaining organized educational workflows.",
-    details: [
-        "Planned and delivered lessons in ceramics, visual arts and digital design for children of various age groups.",
-        "Managed classroom activities for groups of up to 15 students, tracking their project progress and deadlines.",
-        "Provided personal mentoring and advice to students, helping many discover their passions, build portfolios, and successfully enter their chosen art and design programs.",
-        "Created an open, supportive environment where students feel comfortable asking for guidance both during and outside of regular classes.",
-        "Built exceptional relationships with parents based on mutual trust, leading to high family satisfaction and regular requests to place children specifically in my groups.",
-        "OOrganized exhibitions, workshops, and student presentations, coordinating timelines and communication between school administration and parents",
-        "Developed educational programs and maintained class documentation and project reports.",
-        "Developed strong professional soft skills in presentation, group leadership, mentorship, and building trust-based long-term relationships."
-        "Led the development and delivery of technology education programs, coordinating teachers, curriculum planning, resources, and project execution across multiple learning groups."
-     
-    ]
+       title: "Art, Ceramics & Digital Design Teacher & Mentor",
+       subtitle: "Tallinna Tondiraba Huvikool | 2020 - Present",
+       desc: "Dedicated art teacher and mentor with a proven track record of inspiring students, building deep trust with families, and maintaining organized educational workflows.",
+       details: [
+         "Planned and delivered engaging, structured lessons in ceramics, visual arts, and digital design for children of various age groups.",
+         "Managed and coordinated classroom activities for groups of up to 15 students, keeping track of their project progress and deadlines.",
+         "Provided personal mentoring and advice to students, helping many discover their passions, build portfolios, and successfully enter their chosen art and design programs.",
+         "Created an open, supportive environment where students feel comfortable asking for guidance both during and outside of regular classes.",
+         "Built exceptional relationships with parents based on mutual trust, leading to high family satisfaction and regular requests to place children specifically in my groups.",
+         "Organized public art exhibitions, workshops, and student presentations, managing all event timelines and communication between school administration and parents.",
+         "Authored educational programs and maintained precise digital school logs, class documentation, and project reports.",
+         "Developed strong professional soft skills in presentation, group leadership, mentorship, and building trust-based long-term relationships."
+       ]
      },
      proj5: {
        title: "EventPanel Platform QA",
@@ -1544,62 +1542,63 @@ button.tag:hover {
        ]
      },
      hardSkillsMore: {
-title: "Additional Technical Skills",
-subtitle: "Additional QA & Technical Skills",
-desc: "Extended list of tools, methodologies and testing practices.",
-details: [
-"Functional Testing",
-"Regression Testing",
-"Smoke Testing",
-"Usability Testing",
-"UI Testing",
-"Database Testing",
-"Test Cases",
-"Checklists",
-"Bug Reports",
-"Test Reports",
-"Requirements Analysis",
-"Wireflows",
-"Mind Maps",
-"Page Object Model (POM)",
-"GitHub",
-"Asana",
-"DevTools",
-"Home Designer",
-"GeoJSON",
-"Geospatial Data Validation",
-"Coordinate Systems",
-"Staging Environment Testing",
-"Release Validation",
-"Agile",
-"Scrum",
-"SDLC"
-]
-},
-
-softSkillsMore: {
-title: "Additional Soft Skills",
-subtitle: "Communication & Teamwork",
-desc: "Interpersonal, leadership and collaboration skills.",
-details: [
-"Cross-functional Collaboration",
-"Stakeholder Management",
-"Mentoring & Coaching",
-"Clear Communication",
-"Problem Solving",
-"Attention to Detail",
-"Time Management",
-"Adaptability"
-]
-}
+       title: "Additional Technical Skills",
+       subtitle: "Additional QA & Technical Skills",
+       desc: "Extended list of tools, methodologies and testing practices.",
+       details: [
+         "Functional Testing",
+         "Regression Testing",
+         "Smoke Testing",
+         "Usability Testing",
+         "UI Testing",
+         "Database Testing",
+         "Test Cases",
+         "Checklists",
+         "Bug Reports",
+         "Test Reports",
+         "Requirements Analysis",
+         "Wireflows",
+         "Mind Maps",
+         "Page Object Model (POM)",
+         "GitHub",
+         "Asana",
+         "DevTools",
+         "Home Designer",
+         "GeoJSON",
+         "Geospatial Data Validation",
+         "Coordinate Systems",
+         "Staging Environment Testing",
+         "Release Validation",
+         "Agile",
+         "Scrum",
+         "SDLC"
+       ]
+     },
+     softSkillsMore: {
+       title: "Additional Soft Skills",
+       subtitle: "Communication & Teamwork",
+       desc: "Interpersonal, leadership and collaboration skills.",
+       details: [
+         "Cross-functional Collaboration",
+         "Stakeholder Management",
+         "Mentoring & Coaching",
+         "Clear Communication",
+         "Problem Solving",
+         "Attention to Detail",
+         "Time Management",
+         "Adaptability"
+       ]
+     }
    };
+
    const overlay = document.getElementById("modalOverlay");
    const modal = overlay.querySelector(".modal-window");
    const modalBody = document.getElementById("modalBody");
    const closeButton = document.getElementById("modalClose");
    const viewButtons = document.querySelectorAll("[data-view-target]");
    let lastFocusedElement = null;
-  function openModal(id) {
+
+   function openModal(id) {
      const data = registryData[id];
      if (!data) return;
      lastFocusedElement = document.activeElement;
@@ -1612,64 +1611,53 @@ details: [
      subtitle.textContent = data.subtitle;
      const desc = document.createElement("p");
      desc.textContent = data.desc;
-
-   let list;
-
-if (id === "hardSkillsMore" || id === "softSkillsMore") {
-
-list = document.createElement("div");
-list.className = "skills-container";
-
-data.details.forEach((item) => {
-    const tag = document.createElement("span");
-
-    tag.className =
-        id === "softSkillsMore"
-            ? "tag tag-soft"
-            : "tag tag-spec";
-
-    tag.textContent = item;
-    list.appendChild(tag);
-});
-
-} else {
-
-list = document.createElement("ul");
-
-data.details.forEach((item) => {
-    const li = document.createElement("li");
-
-    if (data.isImage) {
-        const img = document.createElement("img");
-        img.src = item;
-        img.alt = data.title;
-        img.style.width = "100%";
-        img.style.maxHeight = "70svh";
-        img.style.objectFit = "contain";
-        img.style.borderRadius = "12px";
-        img.style.marginTop = "10px";
-
-        li.appendChild(img);
-    } else {
-        li.textContent = item;
-    }
-
-    list.appendChild(li);
-});
-}
+     
+     let list;
+     if (id === "hardSkillsMore" || id === "softSkillsMore") {
+       list = document.createElement("div");
+       list.className = "skills-container";
+       data.details.forEach((item) => {
+         const tag = document.createElement("span");
+         tag.className = id === "softSkillsMore" ? "tag tag-soft" : "tag tag-spec";
+         tag.textContent = item;
+         list.appendChild(tag);
+       });
+     } else {
+       list = document.createElement("ul");
+       data.details.forEach((item) => {
+         const li = document.createElement("li");
+         if (data.isImage) {
+           const img = document.createElement("img");
+           img.src = item;
+           img.alt = data.title;
+           img.style.width = "100%";
+           img.style.maxHeight = "70svh";
+           img.style.objectFit = "contain";
+           img.style.borderRadius = "12px";
+           img.style.marginTop = "10px";
+           li.appendChild(img);
+         } else {
+           li.textContent = item;
+         }
+         list.appendChild(li);
+       });
+     }
      modalBody.append(title, subtitle, desc, list);
      overlay.classList.add("active");
      overlay.setAttribute("aria-hidden", "false");
      modal.focus();
    }
+
    function closeModal() {
      overlay.classList.remove("active");
      overlay.setAttribute("aria-hidden", "true");
      if (lastFocusedElement) lastFocusedElement.focus();
    }
+
    document.querySelectorAll("[data-modal]").forEach((button) => {
      button.addEventListener("click", () => openModal(button.dataset.modal));
    });
+
    viewButtons.forEach((button) => {
      button.addEventListener("click", () => {
        const target = button.dataset.viewTarget;
@@ -1680,6 +1668,7 @@ data.details.forEach((item) => {
        if (focusTarget) focusTarget.focus();
      });
    });
+
    closeButton.addEventListener("click", closeModal);
    overlay.addEventListener("click", (event) => {
      if (event.target === overlay) closeModal();
