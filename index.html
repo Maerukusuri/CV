@@ -1132,6 +1132,31 @@ button.tag:hover {
     flex-shrink: 0;
     margin-left: 10px;
 }
+  @media (max-width: 768px) {
+  /* Ограничиваем общую ширину контента и добавляем боковой воздух */
+  .dashboard-main,
+  .main-content,
+  .dashboard-grid,
+  .about-dashboard,
+  .profile-dashboard {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 16px !important;  /* Отступ слева, чтобы карточки не липли */
+    padding-right: 16px !important; /* Отступ справа, чтобы не резался край */
+  }
+
+  /* Карточки подстраиваются под ширину экрана с учетом отступов */
+  .profile-summary, 
+  .experience-card, 
+  .project-card,
+  .info-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-right: 0 !important; /* Убираем возможные боковые сдвиги */
+    margin-left: 0 !important;
+  }
    }
  </style>
 </head>
